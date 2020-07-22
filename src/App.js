@@ -1,56 +1,57 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
+// database for schedule and tasks
 
-// my database for drivers and tasks
-
-let drivers = [
+let schedule = [
   {
     id: 1,
-    name: "Omar D.",
+    driverName: "Omar D.",
     tasks: [
-      {
-        pickup: { location: "", time: "" },
-        dropOff: { location: "", time: "" },
+      { id: "",
+        pickup: { location: "", date: "", time: "" },
+        dropOff: { location: "", date: "", time: "" },
         other: ""
       }
     ]
   },
   {
     id: 2,
-    name: "Cheryl S.",
+    driverName: "Cheryl S.",
     task: [
-      {
-        pickup: { location: "", time: "" },
-        dropOff: { location: "", time: "" },
+      { 
+        id: "",
+        pickup: { location: "", date: "", time: "" },
+        dropOff: { location: "", date: "", time: "" },
         other: ""
       }
     ]
   },
   {
     id: 3,
-    name: "Fatima R.",
+    driverName: "Ferdinand R.",
     task: [
-      {
-        pickup: { location: "", time: "" },
-        dropOff: { location: "", time: "" },
+      { 
+        id: "",
+        pickup: { location: "", date: "", time: "" },
+        dropOff: { location: "", date: "", time: "" },
         other: ""
       }
     ]
   }
 ];
 
-console.log("drivers are: ", drivers)
+console.log("schedule are: ", schedule);
 
 function App() {
   return (
     <div className="App">
       <h1> Rose Rocket Dispatch Scheduling App </h1>
-      {drivers.map(value => {
+      {schedule.map(value => {
         return (
           <h2>
             {" "}
-        {value.name} {value.id}
+            {value.driverName} {value.id}
           </h2>
         );
       })}
