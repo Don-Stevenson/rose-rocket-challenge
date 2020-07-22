@@ -5,35 +5,36 @@ import "./App.css";
 
 let schedule = [
   {
-    id: 1,
+    driverID: 1,
     driverName: "Omar D.",
     tasks: [
-      { id: "",
-        pickup: { location: "", date: "", time: "" },
+      {
+        id: "",
+        pickup: { location: "Burlington", date: "", time: "" },
         dropOff: { location: "", date: "", time: "" },
         other: ""
       }
     ]
   },
   {
-    id: 2,
+    driverID: 2,
     driverName: "Cheryl S.",
     task: [
-      { 
+      {
         id: "",
         pickup: { location: "", date: "", time: "" },
-        dropOff: { location: "", date: "", time: "" },
+        dropOff: { location: "Toronto", date: "", time: "" },
         other: ""
       }
     ]
   },
   {
-    id: 3,
+    driverID: 3,
     driverName: "Ferdinand R.",
     task: [
-      { 
+      {
         id: "",
-        pickup: { location: "", date: "", time: "" },
+        pickup: { location: "Hamilton", date: "", time: "" },
         dropOff: { location: "", date: "", time: "" },
         other: ""
       }
@@ -41,7 +42,25 @@ let schedule = [
   }
 ];
 
-console.log("schedule are: ", schedule);
+const deleteTask = (driverID, task) => {
+  console.log("in delete task", schedule[driverID]);
+};
+
+// deleteTask(1)
+
+const updateTask = (driverID, task) => {
+  console.log("in update task", schedule[driverID]);
+};
+
+// updateTask(1)
+
+const createTask = (driverID, taskNo) => {
+  console.log(
+    "in create task",
+    schedule[driverID].task[taskNo].dropOff.location
+  );
+  return <h3>{schedule[driverID].task[taskNo].dropOff.location}</h3>;
+};
 
 function App() {
   return (
@@ -55,6 +74,7 @@ function App() {
           </h2>
         );
       })}
+      <h3>{createTask(1, 0)}</h3>
     </div>
   );
 }
