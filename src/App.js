@@ -48,18 +48,22 @@ const deleteTask = (driverID, task) => {
 
 // deleteTask(1)
 
-const updateTask = (driverID, task) => {
-  console.log("in update task", schedule[driverID]);
+const updateTask = (driverID, taskNo, newLocation) => {
+  console.log(
+    "in updatetask",
+    (schedule[driverID].task[taskNo].dropOff.location = newLocation)
+  );
+  return <h3>{(schedule[driverID].task[taskNo].dropOff.location = newLocation)}</h3>;
 };
 
 // updateTask(1)
 
-const createTask = (driverID, taskNo) => {
+const createTask = (driverID, taskNo, newLocation) => {
   console.log(
     "in create task",
-    schedule[driverID].task[taskNo].dropOff.location
+    (schedule[driverID].task[taskNo].dropOff.location = newLocation)
   );
-  return <h3>{schedule[driverID].task[taskNo].dropOff.location}</h3>;
+  return <h3>{(schedule[driverID].task[taskNo].dropOff.location = newLocation)}</h3>;
 };
 
 function App() {
@@ -74,7 +78,7 @@ function App() {
           </h2>
         );
       })}
-      <h3>{createTask(1, 0)}</h3>
+      <h3>{updateTask(1, 0, "burlington")}</h3>
     </div>
   );
 }
