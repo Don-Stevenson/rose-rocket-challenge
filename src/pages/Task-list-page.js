@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import TaskList from "../components/Task-list";
 import { TaskContext } from "../context/Task-context";
 import axios from "axios";
+import FlashMessage, { flashErrorMessage } from "../components/Flash-message";
 
 // test data to make sure that the page is displaying data properly
 // ***********************************************
@@ -37,21 +38,28 @@ const TasksListPage = () => {
   // using useEffect to get driver info
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:3030/rr-api');
-      console.log("response is", response.data.data)
-      dispatch({
-      type: "FETCH_TASKS",
-      payload: response.data.data || response.data // in case pagination is disabled
-    });
-    }
-    fetchData()
+      try {
+        const response = await axios.get("http://localhost:3030/rr-api");
+        // console.log("response is", response.data.data);
+        dispatch({
+          type: "FETCH_TASKS",
+          payload: response.data.data || response.data // in case pagination is disabled
+        });
+      } catch (error) {
+        flashErrorMessage(dispatch, error);
+      }
+    };
+    fetchData();
   }, [dispatch]);
-
- // console.log("in the task list, tasks are ", state.tasks);
 
   return (
     <div>
       <h1>List of Tasks</h1>
+
+      {
+        // when the message has content, render a flash message
+      }
+      {state.message.content && <FlashMessage message={state.message} />}
       <TaskList tasks={state.tasks} />
     </div>
   );

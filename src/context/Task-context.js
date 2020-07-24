@@ -17,12 +17,22 @@ const initialState = {
 // *********************************************************************
 function reducer(state, action) {
   switch (action.type) {
+
+    //when tasks are able to be fetched
     case 'FETCH_TASKS': {
       return {
         ...state,
         tasks: action.payload,
         task: {},
       };
+    }
+
+    // send out the messae when a problem arises
+    case 'FLASH_MESSAGE': {
+      return {
+        ...state,
+        message: action.payload,
+      }
     }
     default:
       throw new Error();
