@@ -1,20 +1,22 @@
-import React from 'react';
-import { Card, Button, Icon } from 'semantic-ui-react';
+import React from "react";
+import { Card, Button, Icon } from "semantic-ui-react";
+import { Link } from 'react-router-dom';
 
 export default function TaskCard({ task }) {
- // console.log("in task card, task is ", task[0])
+  // console.log("in task card, task is ", task[0])
   return (
     <Card>
       <Card.Content>
         <Card.Header>
-
-          {// NOTE CHANGE TO taskId 
+          {
+            // NOTE CHANGE TO taskId
           }
           <Icon name="tasks" /> Task No: {task.taskId}
         </Card.Header>
         <Card.Description>
           <p>
-        <Icon name="user outline" /> Driver: {task.driverName.first} {task.driverName.last}
+            <Icon name="user outline" /> Driver: {task.driverName.first}{" "}
+            {task.driverName.last}
           </p>
           <p>
             <Icon name="calendar alternate outline" /> Date: {task.date}
@@ -26,13 +28,18 @@ export default function TaskCard({ task }) {
             <Icon name="hourglass start" /> Start Time: {task.startTime}
           </p>
           <p>
-          <Icon name="hourglass end" /> End Time: {task.stopTime}
+            <Icon name="hourglass end" /> End Time: {task.stopTime}
           </p>
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
         <div className="ui two buttons">
-          <Button basic color="green">
+        <Button
+            basic
+            color="green"
+            as={Link}
+            to={`/tasks/edit/${task._id}`}
+          >
             Edit
           </Button>
           <Button basic color="red">
