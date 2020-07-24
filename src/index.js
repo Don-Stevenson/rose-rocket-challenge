@@ -5,14 +5,14 @@ import "./index.css";
 import App from "./App";
 import "fomantic-ui-css/semantic.min.css";
 import * as serviceWorker from "./serviceWorker";
-import { DriverContextProvider } from "./context/Driver-context";
+import { TaskContextProvider } from "./context/Task-context";
 
 ReactDOM.render(
-  <DriverContextProvider>
+  <TaskContextProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-    </DriverContextProvider>,
+    </TaskContextProvider>,
   document.getElementById("root")
 );
 

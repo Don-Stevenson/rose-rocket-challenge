@@ -92,28 +92,28 @@
 import React from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
-import DriverListPage from './pages/Driver-list-page';
-import DriverFormPage from './pages/Driver-form-page';
+import TaskListPage from './pages/Task-list-page';
+import TaskFormPage from './pages/Task-form-page';
 
 const App = () => {
   return (
     <Container>
       <div className="ui two item menu">
         <NavLink className="item" activeClassName="active" exact to="/">
-          Drivers List
+          Task List
         </NavLink>
         <NavLink
           className="item"
           activeClassName="active"
           exact
-          to="/Drivers/new"
+          to="/tasks/new"
         >
-          Add Driver
+          Add Task
         </NavLink>
       </div>
-      <Route exact path="/" component={DriverListPage} />
-      <Route path="/Drivers/new" component={DriverFormPage} />
-      <Route path="/Drivers/edit/:_id" component={DriverFormPage} />
+      <Route exact path="/" component={TaskListPage} />
+      <Route path="/tasks/new" component={TaskFormPage} />
+      <Route path="/tasks/edit/:_id" component={TaskFormPage} />
     </Container>
   );
 };

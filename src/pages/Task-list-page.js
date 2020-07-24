@@ -1,17 +1,17 @@
 import React, { useContext, useEffect } from "react";
-import DriverList from "../components/Driver-list";
-import { DriverContext } from "../context/Driver-context";
+import TaskList from "../components/Task-list";
+import { TaskContext } from "../context/Task-context";
 
 // test data to make sure that the page is displaying data properly
 // ***********************************************
 const data = [
   {
     _id: "1",
-    name: {
-      first: "Bill",
-      last: "Doe"
-    },
     task: {
+      driverName: {
+        first: "Bill",
+        last: "Hobson"
+      },
       type: "drop off",
       date: "july 24 2020",
       startTime: "8:00",
@@ -20,11 +20,11 @@ const data = [
   },
   {
     _id: "2",
-    name: {
-      first: "Bruce",
-      last: "Wayne"
-    },
     task: {
+      driverName: {
+        first: "Bruce",
+        last: "Wayne"
+      },
       type: "pick up",
       date: "july 24 2020",
       startTime: "13:00",
@@ -33,24 +33,26 @@ const data = [
   }
 ];
 
-const DriversListPage = () => {
+const TasksListPage = () => {
   // state handling using useContext
-  const [state, dispatch] = useContext(DriverContext);
+  const [state, dispatch] = useContext(TaskContext);
 
   // using useEffect to get driver info
   useEffect(() => {
     dispatch({
-      type: "FETCH_DRIVERS",
+      type: "FETCH_TASKS",
       payload: data
     });
   }, [dispatch]);
 
+  console.log("in the task list, tasks are ",state.tasks)
+
   return (
     <div>
-      <h1>List of Drivers</h1>
-      <DriverList drivers={state.drivers} />
+      <h1>List of Tasks</h1>
+      <TaskList tasks={state.tasks} />
     </div>
   );
 };
 
-export default DriversListPage;
+export default TasksListPage;
