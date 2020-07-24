@@ -1,11 +1,11 @@
 import React from 'react';
-import ContactList from '../components/contact-list';
+import DriverList from '../components/Driver-list';
 
 const DriversListPage = () => {
   return (
     <div>
       <h1>List of Drivers</h1>
-      <ContactList />
+      <DriverList />
     </div>
   );
 };
