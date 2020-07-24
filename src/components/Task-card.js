@@ -7,9 +7,13 @@ export default function TaskCard({ task }) {
     <Card>
       <Card.Content>
         <Card.Header>
-          <Icon name="user outline" /> {task.driverName.first} {task.driverName.last}
+          <Icon name="tasks" /> Task No: {task._id}
         </Card.Header>
         <Card.Description>
+          <p>
+
+        <Icon name="user outline" /> Driver: {task.driverName.first} {task.driverName.last}
+          </p>
           <p>
             <Icon name="calendar alternate outline" /> Date: {task.date}
           </p>
