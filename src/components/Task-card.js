@@ -7,6 +7,9 @@ export default function TaskCard({ task }) {
     <Card>
       <Card.Content>
         <Card.Header>
+
+          {// NOTE CHANGE TO taskId 
+          }
           <Icon name="tasks" /> Task No: {task._id}
         </Card.Header>
         <Card.Description>
@@ -17,7 +20,7 @@ export default function TaskCard({ task }) {
             <Icon name="calendar alternate outline" /> Date: {task.date}
           </p>
           <p>
-            <Icon name="shipping fast" /> Type: {task.type}
+            <Icon name="shipping fast" /> Type: {task.taskType}
           </p>
           <p>
             <Icon name="hourglass start" /> Start Time: {task.startTime}
