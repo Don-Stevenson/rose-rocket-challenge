@@ -41,7 +41,7 @@ const TasksListPage = () => {
     });
   }, [dispatch]);
 
-  console.log("in the task list, tasks are ", state.tasks);
+ // console.log("in the task list, tasks are ", state.tasks);
 
   return (
     <div>

@@ -2,11 +2,12 @@ import React from 'react';
 import { Card, Button, Icon } from 'semantic-ui-react';
 
 export default function TaskCard({ task }) {
+ // console.log("in task card, task is ", task[0])
   return (
     <Card>
       <Card.Content>
         <Card.Header>
-          <Icon name="user outline" /> {task.name.first} {task.name.last}
+          <Icon name="user outline" /> {task.driverName.first} {task.driverName.last}
         </Card.Header>
         <Card.Description>
           <p>
@@ -19,7 +20,7 @@ export default function TaskCard({ task }) {
             <Icon name="hourglass start" /> Start Time: {task.startTime}
           </p>
           <p>
-          <Icon name="hourglass end" /> End Time: {task.Stop}
+          <Icon name="hourglass end" /> End Time: {task.stopTime}
           </p>
         </Card.Description>
       </Card.Content>

@@ -1,30 +1,20 @@
-import React from "react";
+import React from 'react';
+import { Card } from 'semantic-ui-react';
+import TaskCard from './Task-card';
 
 export default function TaskList({ tasks }) {
-  console.log("tasks are: ", tasks);
+  // console.log("tasks are: ", tasks);
   // using map to display a list of tasks and task information
-  const tasksList = () => {
+  console.log("in tasklist", tasks)
+  const cards = () => {
     return tasks.map(task => {
-      // console.log("task is", task);
-      return (
-        <li key={task._id}>
-          <div>
-            Driver: {task.driverName.first} {task.driverName.last}{" "}
-          </div>
-          <div>Task No: {task._id}</div>
-          <div>Type: {task.type}</div>
-          <div>Date: {task.date}</div>
-          <div>Start time: {task.startTime}</div>
-          <div>End Time {task.stopTime}</div>
-          <div>   *   </div>
-        </li>
-      );
+      console.log("task is", task)
+      return <TaskCard key={task._id} task={task} />;
     });
   };
-
   return (
     <div>
-      <ul>{tasksList()}</ul>
+       return <Card.Group>{cards()}</Card.Group>;
     </div>
   );
 }
