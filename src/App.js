@@ -101,7 +101,7 @@ const App = () => {
       <h1> Rose Rocket Dispatch Centre</h1>
       <div className="ui two item menu">
         <NavLink className="item" activeClassName="active" exact to="/">
-          Task List
+          Driver's Task List
         </NavLink>
         <NavLink
           className="item"
@@ -109,7 +109,7 @@ const App = () => {
           exact
           to="/tasks/new"
         >
-          Add Task
+          Add New Driver Task
         </NavLink>
       </div>
       <Route exact path="/" component={TaskListPage} />
