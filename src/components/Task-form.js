@@ -1,16 +1,45 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Form, Grid, Button } from "semantic-ui-react";
 import { useForm } from "react-hook-form";
+import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import classnames from "classnames";
 import { TaskContext } from "../context/Task-context";
+import { flashErrorMessage } from './Flash-message';
 
 export default function TaskForm() {
 
   //handling states using useContext on TaskConext 
-  const [state] = useContext(TaskContext);
+  const [state, dispatch] = useContext(TaskContext);
   const { register, errors, handleSubmit } = useForm();
   // console login data for the time being
-  const onSubmit = data => console.log(data);
+  const [redirect, setRedirect] = useState(false);
+
+  // function that sends data to the server or returns an error if there is a problem
+  const createTask = async data => {
+    try {
+      const response = await axios.post('http://localhost:3030/rr-api', data);
+      dispatch({
+        type: 'CREATE_TASK',
+        payload: response.data,
+      });
+      setRedirect(true);
+    } catch (error) {
+      flashErrorMessage(dispatch, error);
+    }
+  };
+
+  // handling the onSubmit to wait for create task to run
+  const onSubmit = async data => {
+    await createTask(data);
+  };
+
+  // if redirect is true, route to the homepage
+  if (redirect) {
+    return <Redirect to="/" />;
+  }
+
+
 
   return (
     <Grid centered columns={2}>
@@ -40,7 +69,7 @@ export default function TaskForm() {
                   "Must be more than 2 characters"}
               </span>
             </Form.Field>
-            
+
             <Form.Field className={classnames({ error: errors.date })}>
               <label htmlFor="date">
                 Date
