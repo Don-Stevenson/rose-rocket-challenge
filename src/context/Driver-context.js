@@ -5,7 +5,6 @@ import React, { useReducer, createContext } from 'react';
 //********************************************************************
 export const DriverContext = createContext();
 
-
 // setting up the initial state
 // ****************************
 const initialState = {
@@ -30,8 +29,8 @@ function reducer(state, action) {
   }
 }
 
-// making a function that returns the state from the db
-// *****************************************************
+// making a function that returns the data
+// ***************************************
 export const DriverContextProvider = props => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { children } = props;
