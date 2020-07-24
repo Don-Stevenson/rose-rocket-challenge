@@ -14,7 +14,7 @@ export default function TaskList({ tasks }) {
   };
   return (
     <div>
-       return <Card.Group>{cards()}</Card.Group>;
+       <Card.Group>{cards()}</Card.Group>
     </div>
   );
 }

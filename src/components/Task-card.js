@@ -11,7 +11,6 @@ export default function TaskCard({ task }) {
         </Card.Header>
         <Card.Description>
           <p>
-
         <Icon name="user outline" /> Driver: {task.driverName.first} {task.driverName.last}
           </p>
           <p>
