@@ -8,7 +8,7 @@ const data = [
   {
     _id: "1",
     name: {
-      first: "JBill",
+      first: "Bill",
       last: "Doe"
     },
     task: {
@@ -48,7 +48,7 @@ const DriversListPage = () => {
   return (
     <div>
       <h1>List of Drivers</h1>
-      <DriverList contacts={state.contacts} />
+      <DriverList drivers={state.drivers} />
     </div>
   );
 };

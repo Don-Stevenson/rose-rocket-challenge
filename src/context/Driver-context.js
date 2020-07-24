@@ -8,8 +8,8 @@ export const DriverContext = createContext();
 // setting up the initial state
 // ****************************
 const initialState = {
-  Drivers: [],
-  Driver: {}, // selected or new
+  drivers: [],
+  driver: {}, // selected or new
   task: {}, // { type: 'success|fail', title:'Info|Error' content:'lorem ipsum'}
 };
 
@@ -20,8 +20,8 @@ function reducer(state, action) {
     case 'FETCH_DRIVERS': {
       return {
         ...state,
-        Drivers: action.payload,
-        Driver: {},
+        drivers: action.payload,
+        driver: {},
       };
     }
     default:
