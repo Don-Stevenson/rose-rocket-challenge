@@ -10,7 +10,7 @@ export default function TaskCard({ task }) {
 
           {// NOTE CHANGE TO taskId 
           }
-          <Icon name="tasks" /> Task No: {task._id}
+          <Icon name="tasks" /> Task No: {task.taskId}
         </Card.Header>
         <Card.Description>
           <p>

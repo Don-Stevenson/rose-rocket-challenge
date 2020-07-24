@@ -26,7 +26,7 @@ function reducer(state, action) {
         task: {},
       };
     }
-
+    // create task and display a success message
     case 'CREATE_TASK': {
       return {
         ...state,
@@ -34,7 +34,23 @@ function reducer(state, action) {
         message: {
           type: 'success',
           title: 'Success',
-          content: 'New Task created!',
+          content: 'New Driver Task created!',
+        },
+      };
+    }
+    
+    // update a task and display a success message
+    case 'UPDATE_TASK': {
+      const task = action.payload;
+      return {
+        ...state,
+         tasks: state.taslss.map(item =>
+          item._id === task._id ? task : item,
+        ),
+        message: {
+          type: 'success',
+          title: 'Task Update Successful',
+          content: `Driver task "${task}" has been updated!`,
         },
       };
     }
