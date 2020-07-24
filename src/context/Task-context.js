@@ -27,6 +27,18 @@ function reducer(state, action) {
       };
     }
 
+    case 'CREATE_TASK': {
+      return {
+        ...state,
+        tasks: [...state.tasks, action.payload],
+        message: {
+          type: 'success',
+          title: 'Success',
+          content: 'New Task created!',
+        },
+      };
+    }
+
     // send out the messae when a problem arises
     case 'FLASH_MESSAGE': {
       return {

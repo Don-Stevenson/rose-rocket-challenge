@@ -5,8 +5,11 @@ import classnames from "classnames";
 import { TaskContext } from "../context/Task-context";
 
 export default function TaskForm() {
+
+  //handling states using useContext on TaskConext 
   const [state] = useContext(TaskContext);
   const { register, errors, handleSubmit } = useForm();
+  // console login data for the time being
   const onSubmit = data => console.log(data);
 
   return (
@@ -37,6 +40,7 @@ export default function TaskForm() {
                   "Must be more than 2 characters"}
               </span>
             </Form.Field>
+            
             <Form.Field className={classnames({ error: errors.date })}>
               <label htmlFor="date">
                 Date
