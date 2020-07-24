@@ -7,29 +7,25 @@ import { TaskContext } from "../context/Task-context";
 const data = [
   {
     _id: "1",
-    task: {
-      driverName: {
-        first: "Bill",
-        last: "Hobson"
-      },
-      type: "drop off",
-      date: "july 24 2020",
-      startTime: "8:00",
-      stopTime: "12:00"
-    }
+    driverName: {
+      first: "Bill",
+      last: "Hobson"
+    },
+    type: "drop off",
+    date: "july 24 2020",
+    startTime: "8:00",
+    stopTime: "12:00"
   },
   {
     _id: "2",
-    task: {
-      driverName: {
-        first: "Bruce",
-        last: "Wayne"
-      },
-      type: "pick up",
-      date: "july 24 2020",
-      startTime: "13:00",
-      stopTime: "17:00"
-    }
+    driverName: {
+      first: "Bruce",
+      last: "Wayne"
+    },
+    type: "pick up",
+    date: "july 24 2020",
+    startTime: "13:00",
+    stopTime: "17:00"
   }
 ];
 
@@ -45,7 +41,7 @@ const TasksListPage = () => {
     });
   }, [dispatch]);
 
-  console.log("in the task list, tasks are ",state.tasks)
+  console.log("in the task list, tasks are ", state.tasks);
 
   return (
     <div>
