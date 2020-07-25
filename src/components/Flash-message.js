@@ -16,7 +16,7 @@ export default function FlashMessage({ message }) {
   );
 }
 
-//helper function that differentiats between a 
+//helper function that differentiates between a 
 //network errors and errors sent by the the server api
 // *****************************************************
 export function flashErrorMessage(dispatch, error) {

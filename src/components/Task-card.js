@@ -2,8 +2,8 @@ import React from "react";
 import { Card, Button, Icon } from "semantic-ui-react";
 import { Link } from 'react-router-dom';
 
-export default function TaskCard({ task }) {
-  // console.log("in task card, task is ", task[0])
+export default function TaskCard({ task, deleteTask }) {
+   //console.log("in task card, task is ", task)
   return (
     <Card>
       <Card.Content>
@@ -20,6 +20,9 @@ export default function TaskCard({ task }) {
           </p>
           <p>
             <Icon name="calendar alternate outline" /> Date: {task.date}
+          </p>
+          <p>
+            <Icon name="location arrow" /> Location: {task.location}
           </p>
           <p>
             <Icon name="shipping fast" /> Type: {task.taskType}
