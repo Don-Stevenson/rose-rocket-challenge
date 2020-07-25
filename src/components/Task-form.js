@@ -64,6 +64,7 @@ export default function TaskForm({task}) {
     }
   };
 
+ 
   // if redirect is true, route to the homepage
   if (redirect) {
     return <Redirect to="/" />;

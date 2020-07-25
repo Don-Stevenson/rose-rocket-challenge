@@ -27,6 +27,15 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### Bugs
+Error message persists after you click save.
+
+### If I had more time ...
+- refactor lots of function into a helper function folder
+- add maps to the destinations for dispatchers or drivers
+- take in drivers phone numbers and send out addresses and maps via twillio or other sms service
+-
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
