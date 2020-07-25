@@ -15,9 +15,7 @@ export default function TaskForm({task}) {
   });
   const [redirect, setRedirect] = useState(false);
   
-  // FIX THIS SECTiION IT IS NOT RECIEVING TASK ABOVE IN TASKFORM
-  // *************************************************************
-
+  
   //console.log("here in taskform", task)
 
   // function that sends data to the server or returns an error if there is a problem

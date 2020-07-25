@@ -2,8 +2,17 @@ import React from "react";
 import { Card, Button, Icon } from "semantic-ui-react";
 import { Link } from 'react-router-dom';
 
-export default function TaskCard({ task, deleteTask }) {
-   //console.log("in task card, task is ", task)
+
+
+
+
+export default function TaskCard({ task }) {
+   
+  const deleteTask = async id =>{
+    console.log("here in delete task")
+  }
+
+
   return (
     <Card>
       <Card.Content>
@@ -45,7 +54,7 @@ export default function TaskCard({ task, deleteTask }) {
           >
             Edit
           </Button>
-          <Button basic color="red">
+          <Button basic color="red" onClick={() => deleteTask(task._id)}>
             Delete
           </Button>
         </div>
