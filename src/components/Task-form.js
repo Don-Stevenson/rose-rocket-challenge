@@ -14,16 +14,16 @@ export default function TaskForm({task}) {
     defaultValues: task,
   });
   const [redirect, setRedirect] = useState(false);
-
+  
   // FIX THIS SECTiION IT IS NOT RECIEVING TASK ABOVE IN TASKFORM
   // *************************************************************
 
-  console.log("here in taskform", task)
+  //console.log("here in taskform", task)
 
   // function that sends data to the server or returns an error if there is a problem
   const createTask = async data => {
     try {
-      console.log("here in create task data is", data)
+      //console.log("here in create task data is", data)
       const response = await axios.post("http://localhost:3030/rr-api", data);
       dispatch({
         type: "CREATE_TASK",
@@ -36,14 +36,14 @@ export default function TaskForm({task}) {
   };
 
   const updateTask = async data => {
-    console.log("in update task",  data);
+    //console.log("in update task",  data);
 
     try {
       const response = await axios.patch(
         `http://localhost:3030/rr-api/${task._id}`,
         data
       );
-      console.log("in update task", response);
+      //console.log("in update task", response);
       dispatch({
         type: "UPDATE_TASK",
         payload: response.data
@@ -58,7 +58,7 @@ export default function TaskForm({task}) {
   // run update task , other wise create a new task  
 
   const onSubmit = async data => {
-    console.log("here in on submit")
+    //console.log("here in on submit")
     if (task._id) {
       await updateTask(data);
     } else {
@@ -75,7 +75,8 @@ export default function TaskForm({task}) {
     <Grid centered columns={2}>
       <Grid.Column>
         <h1 style={{ marginTop: "1em" }}>
-          {console.log("here in task form", task)}
+          {//console.log("here in task form", task)
+          }
           {task._id ? "Edit Driver's Task" : "Add New Drivers Task"}
         </h1>
         {// if there is an error flash the message 

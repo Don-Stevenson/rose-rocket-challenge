@@ -35,9 +35,9 @@ function reducer(state, action) {
     }
 
 
-    // create task and display a success message
+    // create task and send a success message
     case "CREATE_TASK": {
-      console.log("here in create task", state)
+     // console.log("here in create task", state)
       return {
         ...state,
         tasks: [...state.tasks, action.payload],
@@ -49,10 +49,10 @@ function reducer(state, action) {
       };
     }
 
-    // update a task and display a success message
+    // update a task and send a success message
     case "UPDATE_TASK": {
       const task = action.payload;
-      console.log("task is", task)
+     // console.log("task is", task)
       return {
         ...state,
         tasks: state.tasks.map(item => (item._id === task._id ? task : item)),
@@ -63,6 +63,20 @@ function reducer(state, action) {
         }
       };
     }
+    // delete a task and send a sucess message
+    case 'DELETE_TASK': {
+      const _id  = action.payload;
+      return {
+        ...state,
+        contacts: state.tasks.filter(item => item._id !== _id),
+        message: {
+          type: 'success',
+          title: 'Delete Successful',
+          content: `Task has been deleted!`,
+        },
+      };
+    }
+
 
     // send out the messae when a problem arises
     case "FLASH_MESSAGE": {
