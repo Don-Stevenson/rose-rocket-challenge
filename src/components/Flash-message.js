@@ -6,6 +6,12 @@ import { Message } from 'semantic-ui-react';
 //******************************************************/
 
 export default function FlashMessage({ message }) {
+
+// add some kind of time out to make the message disapear?
+// set default display message = false
+// if message is true, set display true for 2 secs time out function,
+// return display to false 
+
   return (
     <Message
       positive={message.type === 'success'}
