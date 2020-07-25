@@ -7,13 +7,16 @@ import classnames from "classnames";
 import { TaskContext } from "../context/Task-context";
 import FlashMessage,{ flashErrorMessage } from "./Flash-message";
 
-export default function TaskForm(task) {
+export default function TaskForm({task}) {
   //handling states using useContext on TaskConext
   const [state, dispatch] = useContext(TaskContext);
   const { register, errors, handleSubmit } = useForm({
     defaultValues: task,
   });
   const [redirect, setRedirect] = useState(false);
+
+  // FIX THIS SECTiION IT IS NOT RECIEVING TASK ABOVE IN TASKFORM
+  // *************************************************************
 
   console.log("here in taskform", task)
 
@@ -78,7 +81,7 @@ export default function TaskForm(task) {
         {// if there is an error flash the message 
         } 
         {state.message.content && <FlashMessage message={state.message} />}
-        
+
         <Form onSubmit={handleSubmit(onSubmit)} loading={state.loading}>
           <Form.Group widths="equal">
             <Form.Field className={classnames({ error: errors.taskId })}>

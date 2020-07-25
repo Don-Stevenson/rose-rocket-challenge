@@ -29,7 +29,7 @@ function reducer(state, action) {
     case "FETCH_TASK": {
       return {
         ...state,
-        contact: action.payload,
+        task: action.payload,
         message: {}
       };
     }
@@ -37,6 +37,7 @@ function reducer(state, action) {
 
     // create task and display a success message
     case "CREATE_TASK": {
+      console.log("here in create task", state)
       return {
         ...state,
         tasks: [...state.tasks, action.payload],
@@ -51,6 +52,7 @@ function reducer(state, action) {
     // update a task and display a success message
     case "UPDATE_TASK": {
       const task = action.payload;
+      console.log("task is", task)
       return {
         ...state,
         tasks: state.tasks.map(item => (item._id === task._id ? task : item)),

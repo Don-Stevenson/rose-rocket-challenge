@@ -4,7 +4,7 @@ import TaskForm from '../components/Task-form';
 import { flashErrorMessage } from '../components/Flash-message';
 import { TaskContext } from '../context/Task-context';
 
-const TaskFormPage = ({match}) => {
+export default function TaskFormPage ({match}) {
   // handling staate
   const [state, dispatch] = useContext(TaskContext);
   const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ const TaskFormPage = ({match}) => {
  //console.log("match ", match.params)
   useEffect(() => {
     const { _id } = match.params; // Grab URL _id
-    console.log("in task form page, id params is ", _id)
+   // console.log("in task form page, id params is ", _id)
     if (_id) {
       const fetchData = async () => {
         try {
@@ -44,6 +44,4 @@ return (
       <TaskForm task={state.task} />
     </div>
   );
-};
-
-export default TaskFormPage;
+}
