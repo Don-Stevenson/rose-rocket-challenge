@@ -186,10 +186,11 @@ export default function TaskForm({task}) {
                 name="driverName.first"
                 type="text"
                 placeholder="First Name"
-                ref={register({ required: true, minLength: 2 })}
+                ref={register({ required: true, minLength: 1 })}
               />
             </label>
             <span className="error">
+              {/* {console.log("in task form , errors is ", errors)} */}
               {errors.driverName &&
                 errors.driverName.first.type === "required" &&
                 "First Name Required"}
