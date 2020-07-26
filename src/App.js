@@ -3,7 +3,7 @@ import { NavLink, Route } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import TaskListPage from "./pages/Task-list-page";
 import TaskFormPage from "./pages/Task-form-page";
-import "./timeline.scss"
+import "./timeline.scss";
 
 import Timeline from "react-calendar-timeline";
 import moment from "moment";
@@ -18,8 +18,23 @@ const items = [
     id: 1,
     group: 1,
     title: "item 1",
-    start_time: moment(),
-    end_time: moment().add(1, "hour")
+    start_time: moment().add(0, "hour"),
+    end_time: moment().add(1, "hour"),
+    canMove: true,
+    canResize: false,
+    canChangeGroup: false,
+    itemProps: {
+      // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+      "data-custom-attribute": "Random content",
+      "aria-hidden": true,
+      onDoubleClick: () => {
+        console.log("You clicked double!");
+      },
+      className: "weekend",
+      style: {
+        background: "fuchsia"
+      }
+    }
   },
   {
     id: 2,
@@ -55,20 +70,18 @@ const App = () => {
         </NavLink>
       </div>
       <h1> Driver Schedule </h1>
-   <div>
-   
-        <Timeline groups={groups}
-                   items={items}
-                   defaultTimeStart={moment().add(-12, 'hour')}
-                  defaultTimeEnd={moment().add(12, 'hour')}
-                  />
-       </div>
+      <div>
+        <Timeline
+          groups={groups}
+          items={items}
+          defaultTimeStart={moment().add(-12, "hour")}
+          defaultTimeEnd={moment().add(12, "hour")}
+        />
+      </div>
       <Route exact path="/" component={TaskListPage} />
       <Route path="/tasks/new" component={TaskFormPage} />
       <Route path="/tasks/edit/:_id" component={TaskFormPage} />
-
-       </Container>
-
+    </Container>
   );
 };
 
