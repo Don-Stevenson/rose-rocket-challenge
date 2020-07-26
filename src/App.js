@@ -54,11 +54,7 @@ const App = () => {
           Add New Driver Task
         </NavLink>
       </div>
-
-      <Route exact path="/" component={TaskListPage} />
-      <Route path="/tasks/new" component={TaskFormPage} />
-      <Route path="/tasks/edit/:_id" component={TaskFormPage} />
-
+      <h1> Driver Schedule </h1>
    <div>
    
         <Timeline groups={groups}
@@ -67,6 +63,10 @@ const App = () => {
                   defaultTimeEnd={moment().add(12, 'hour')}
                   />
        </div>
+      <Route exact path="/" component={TaskListPage} />
+      <Route path="/tasks/new" component={TaskFormPage} />
+      <Route path="/tasks/edit/:_id" component={TaskFormPage} />
+
        </Container>
 
   );
