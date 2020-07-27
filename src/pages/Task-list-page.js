@@ -39,12 +39,15 @@ export default function TasksListPage() {
   // *****************************************************************
   const makeCalendarItems = items => {
     let calenderArr = items.reduce((accum, element, index) => {
+      console.log(element)
+
       accum.push({
         id: element._id,
         group: parseInt(element.taskId),
         title: element.taskType,
-        start_time: moment().add(0, "hour"),
-        end_time: moment().add(1, "hour"),
+        date: moment().set({'year': 2020, 'month': 7, 'date': 27}),
+        start_time: moment().set({ 'hour': 17, 'minute': 30 }),
+        end_time: moment().set({'hour': 17, 'minute': 55 }),
         canMove: true,
         canResize: false,
         canChangeGroup: false,
@@ -81,7 +84,12 @@ export default function TasksListPage() {
   let calendarItems = makeCalendarItems(state.tasks);
   let calendarGroups = makeCalendarGroups(state.tasks);
 
-  // console.log("after calendar items", calendarItems, calendarGroups);
+  console.log(
+    "after calendar items,",
+    calendarItems,
+    "calendar Groups",
+    calendarGroups
+  );
 
   return (
     <div>
