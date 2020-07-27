@@ -63,6 +63,7 @@ function reducer(state, action) {
         }
       };
     }
+    
     // delete a task and send a sucess message
     case 'DELETE_TASK': {
       const _id  = action.payload;

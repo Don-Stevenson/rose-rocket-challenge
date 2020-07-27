@@ -35,7 +35,6 @@ export default function TaskForm({task}) {
 
   const updateTask = async data => {
     //console.log("in update task",  data);
-
     try {
       const response = await axios.patch(
         `http://localhost:3030/rr-api/${task._id}`,

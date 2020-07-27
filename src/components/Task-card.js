@@ -7,6 +7,8 @@ import { flashErrorMessage } from "./Flash-message"
 import { Redirect } from "react-router";
 
 export default function TaskCard({ task }) {
+
+  // importing and setting  state from task from Task Context
   const [state, dispatch] = useContext(TaskContext);
   const [redirect, setRedirect] = useState(false);
   
@@ -28,7 +30,7 @@ export default function TaskCard({ task }) {
       flashErrorMessage(dispatch, error);
     }
   };
-
+  
   // if redirect is true, route to the homepage
   if (redirect) {
     return <Redirect to="/" />;
@@ -38,10 +40,7 @@ export default function TaskCard({ task }) {
     <Card>
       <Card.Content>
         <Card.Header>
-          {
-            // NOTE CHANGE TO taskId
-          }
-          <Icon name="tasks" /> Task No: {task.taskId}
+     <Icon name="tasks" /> Task No: {task.taskId}
         </Card.Header>
         <Card.Description>
           <p>
