@@ -55,16 +55,18 @@ export default function TasksListPage() {
         id: element._id,
         group: parseInt(element.taskId),
         title: element.taskType,
-        date: moment().set({ year: 2020, month: 7, date: day }),
+        // date: moment().set({ year: 2020, month: 7, date: day }),
         start_time: moment().set({
           year: year,
           month: month,
+          date: day,
           hour: startHour,
           minute: startmin
         }),
         end_time: moment().set({
           year: year,
           month: month,
+          date: day,
           hour: stopHour,
           minute: stopMin
         }),
