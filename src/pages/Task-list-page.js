@@ -93,7 +93,7 @@ export default function TasksListPage() {
     let groupArr = items.reduce((accum, element, index) => {
       accum.push({
         id: parseInt(element.taskId),
-        title: element.taskType
+        title: `${element.taskType} (${element.driverName.first} ${element.driverName.last}`
       });
       return accum;
     }, []);
@@ -113,7 +113,7 @@ export default function TasksListPage() {
 
   return (
     <div>
-      <div>
+      <div className="driver_schedule">
         <h1> Driver Schedule </h1>
         {
           // console.log("state.tasks", state.tasks)
