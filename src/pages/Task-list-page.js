@@ -28,7 +28,8 @@ export default function TasksListPage() {
     };
     fetchData();
   }, [dispatch]);
-  // this is a work around to return data from the database
+
+  // the following is a work around to return data from the database
   // that can be used in the type of format that can be used with the react calendar.
   // I do not consider this optimal practice in production.
   // I consider this a very make shift solution to a problem that requires a backend structured in this format.
@@ -39,15 +40,34 @@ export default function TasksListPage() {
   // *****************************************************************
   const makeCalendarItems = items => {
     let calenderArr = items.reduce((accum, element, index) => {
-      console.log(element)
+      const day = parseInt(element.date.slice(0, 2));
+      const month = parseInt(element.date.slice(3, 5)) - 1; // month is a zero based index in moment
+      const year = parseInt(element.date.slice(6, 10));
+      const startHour = parseInt(element.startTime.slice(0, 2));
+      const startmin = parseInt(element.startTime.slice(3, 5));
+      const stopHour = parseInt(element.stopTime.slice(0, 2));
+      const stopMin = parseInt(element.stopTime.slice(3, 5));
+      //console.log("day month year", day, month, year)
+      // console.log(element.startTime);
+      // console.log("stop hour is", stopHour, stopMin);
 
       accum.push({
         id: element._id,
         group: parseInt(element.taskId),
         title: element.taskType,
-        date: moment().set({'year': 2020, 'month': 7, 'date': 27}),
-        start_time: moment().set({ 'hour': 17, 'minute': 30 }),
-        end_time: moment().set({'hour': 17, 'minute': 55 }),
+        date: moment().set({ year: 2020, month: 7, date: day }),
+        start_time: moment().set({
+          year: year,
+          month: month,
+          hour: startHour,
+          minute: startmin
+        }),
+        end_time: moment().set({
+          year: year,
+          month: month,
+          hour: stopHour,
+          minute: stopMin
+        }),
         canMove: true,
         canResize: false,
         canChangeGroup: false,
