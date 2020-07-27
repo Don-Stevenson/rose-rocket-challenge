@@ -29,11 +29,14 @@ export default function TasksListPage() {
     fetchData();
   }, [dispatch]);
   // this is a work around to return data from the database
-  // that can be used in the type of format that can be used with the table
-  // this is NOT an acceptable practice in production.
+  // that can be used in the type of format that can be used with the react calendar.
+  // I do not consider this optimal practice in production.
   // I consider this a very make shift solution to a problem that requires a backend structured in this format.
-  // Unfortunately,I ran out of time to find a working solution with the db I built
+  // More ideally, the backend data structure would already be in the correct format for react calendar.
 
+  // functions that take state and return them in object formats
+  // thats react calender can render)
+  // *****************************************************************
   const makeCalendarItems = items => {
     let calenderArr = items.reduce((accum, element, index) => {
       accum.push({
@@ -55,7 +58,7 @@ export default function TasksListPage() {
           className: "weekend",
           style: {
             background: "fuchsia"
-         }
+          }
         }
       });
       return accum;
@@ -74,8 +77,7 @@ export default function TasksListPage() {
     return groupArr;
   };
 
-  // console.log("here in task list page", state.tasks);
-  // console.log("state is", state);
+  // call the functions and return them into new arrays of objects
   let calendarItems = makeCalendarItems(state.tasks);
   let calendarGroups = makeCalendarGroups(state.tasks);
 
