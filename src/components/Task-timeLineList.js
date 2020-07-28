@@ -1,16 +1,43 @@
-import React from 'react'
-import { Dropdown, Menu } from 'semantic-ui-react'
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
-const options = [
-  { key: 1, text: 'Choice 1', value: 1 },
-  { key: 2, text: 'Choice 2', value: 2 },
-  { key: 3, text: 'Choice 3', value: 3 },
-]
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2)
+  }
+}));
 
-const DropdownExampleSimple = () => (
-  <Menu compact>
-    <Dropdown text='Dropdown' options={options} simple item />
-  </Menu>
-)
+export default function SimpleSelect() {
+  const classes = useStyles();
+  const [age, setAge] = React.useState("");
 
-export default DropdownExampleSimple
+  const handleChange = event => {
+    setAge(event.target.value);
+  };
+
+  return (
+    <div>
+      <FormControl className={classes.formControl}>
+        <InputLabel id="demo-simple-select-label">Drivers List</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          onChange={handleChange}
+        >
+          <MenuItem value={10}>driver</MenuItem>
+          <MenuItem value={20}>driver1</MenuItem>
+          <MenuItem value={30}>driver2</MenuItem>
+        </Select>
+      </FormControl>
+    </div>
+  );
+}

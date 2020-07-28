@@ -5,6 +5,7 @@ import axios from "axios";
 import FlashMessage, { flashErrorMessage } from "../components/Flash-message";
 import Timeline from "react-calendar-timeline";
 import moment from "moment";
+import SimpleSelect from "../components/Task-timeLineList";
 
 
 
@@ -118,12 +119,13 @@ export default function TasksListPage() {
     calendarItems,
     "calendar Groups",
     calendarGroups
-  );
-
-  return (
-    <div>
+    );
+    
+    return (
+      <div>
       <div className="driver_schedule">
         <h2> Driver Schedule </h2>
+      <SimpleSelect tasks={state.tasks}></SimpleSelect>
 
         <Timeline
           groups={calendarGroups}
@@ -132,12 +134,12 @@ export default function TasksListPage() {
           defaultTimeEnd={moment().add(12, "hour")}
         />
         <h4> Schedule can be moved left to right, with zoom in and out</h4>
-        <p>shift + mousewheel = move timeline left/right </p>
+        <p> shift + mousewheel = move timeline left/right </p>
         <p> alt + mousewheel = zoom in/out</p>
         <p> ctrl + mousewheel = zoom in/out 10× faster</p>
       </div>
       <h2>List of Driver's Tasks</h2>
-      <p>Please Note: Each task must have it's own unique id</p>
+      <p>Please Note: Each task must have its own unique id</p>
 
       {
         // when the message has content, render a flash message
