@@ -70,7 +70,7 @@ export default function TasksListPage() {
           hour: stopHour,
           minute: stopMin
         }),
-        canMove: true,
+        canMove: false,
         canResize: false,
         canChangeGroup: false,
         itemProps: {
@@ -82,8 +82,8 @@ export default function TasksListPage() {
           },
           className: "weekend",
           style: {
-            background: "fuchsia"
-          }
+            background:  "#ceb1beff"
+         }
         }
       });
       return accum;
@@ -116,18 +116,21 @@ export default function TasksListPage() {
   return (
     <div>
       <div className="driver_schedule">
-        <h1> Driver Schedule </h1>
-        {
-          // console.log("state.tasks", state.tasks)
-        }
+        <h2> Driver Schedule </h2>
+
         <Timeline
           groups={calendarGroups}
           items={calendarItems}
           defaultTimeStart={moment().add(-12, "hour")}
           defaultTimeEnd={moment().add(12, "hour")}
         />
+        <h4> Schedule can be dragged left to right, with zoom in and out</h4>
+        <p>shift + mousewheel = move timeline left/right </p>
+        <p> alt + mousewheel = zoom in/out</p>
+        <p> ctrl + mousewheel = zoom in/out 10× faster</p>
       </div>
-      <h1>List of Driver's Tasks</h1>
+      <h2>List of Driver's Tasks</h2>
+      <p>Please Note: Each task must have it's own unique id</p>
 
       {
         // when the message has content, render a flash message

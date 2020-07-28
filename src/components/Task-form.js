@@ -90,7 +90,7 @@ export default function TaskForm({task}) {
                   id="taskId"
                   name="taskId"
                   type="text"
-                  placeholder="Enter Task Id"
+                  placeholder="Must be unique 6 digit number"
                   ref={register({ required: true, minLength: 2 })}
                 />
               </label>

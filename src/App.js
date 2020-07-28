@@ -16,7 +16,7 @@ const App = () => {
       <h1> Rose Rocket Dispatch Centre</h1>
       <div className="ui two item menu">
         <NavLink className="item" activeClassName="active" exact to="/">
-          Driver's Task List
+          Driver's Task Schedule
         </NavLink>
         <NavLink
           className="item"

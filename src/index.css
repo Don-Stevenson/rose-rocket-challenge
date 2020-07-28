@@ -1,7 +1,22 @@
+
+/* CSS */
+/*lavender-blush: hsla(342, 32%, 92%, 1);
+gainsboro: hsla(340, 9%, 87%, 1);
+thistle: hsla(333, 23%, 75%, 1);
+old-rose: hsla(358, 33%, 59%, 1);
+raisin-black: hsla(240, 7%, 19%, 1);  */
+
+
+
+body{
+  background-color: #2d2d34ff
+}
+
 .error {
     color: #9f3a38;
   }
 
 .driver_schedule {
-  height: 200%;
+  height: auto
 }
+
