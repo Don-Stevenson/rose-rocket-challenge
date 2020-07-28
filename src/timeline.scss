@@ -7,7 +7,7 @@ $item-selected-background: #ffc107;
 $item-selected-border: 1px solid #ff9800;
 
 $row-background-even: transparent;
-$row-background-odd: rgba(0, 0, 0, 0.05);
+$row-background-odd: r#2d2d34ff;
 
 $border-color: #bbb;
 $border-width: 1px;
@@ -46,7 +46,7 @@ $weekend: rgba(250, 246, 225, 0.5);
     
     /*text*/
     .rct-item-content {
-      color: black;
+      color: #2d2d34ff;
       position: sticky;
       position: -webkit-sticky;
       left: 0px;
@@ -156,7 +156,7 @@ $weekend: rgba(250, 246, 225, 0.5);
 
   /* top solidbar of schedule*/
   .rct-header-root {
-    background: rgba(45, 45, 52, 1);
+    background: #2d2d34ff;
     border-bottom: 1px solid #bbb;
    
   }

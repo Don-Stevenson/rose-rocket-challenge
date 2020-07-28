@@ -5,6 +5,8 @@ import axios from "axios";
 import FlashMessage, { flashErrorMessage } from "../components/Flash-message";
 import Timeline from "react-calendar-timeline";
 import moment from "moment";
+import { Dropdown } from 'semantic-ui-react'
+
 
 //import { items, groups } from "../components/Task-timeLineList";
 
@@ -79,6 +81,11 @@ export default function TasksListPage() {
           "aria-hidden": true,
           onDoubleClick: () => {
             console.log("You clicked double!");
+            
+            return (
+
+              <TaskList tasks={state.tasks} />
+            )
           },
           className: "weekend",
           style: {
