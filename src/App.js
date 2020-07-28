@@ -7,7 +7,7 @@ import "./timeline.scss";
 
 const App = ({ children }) => {
   return (
-    <Container>
+     <Container>
       <h1> Rose Rocket Dispatch Centre</h1>
       <div className="ui two item menu">
         <NavLink className="item" activeClassName="active" exact to="/">

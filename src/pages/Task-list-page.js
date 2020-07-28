@@ -5,7 +5,7 @@ import axios from "axios";
 import FlashMessage, { flashErrorMessage } from "../components/Flash-message";
 import Timeline from "react-calendar-timeline";
 import moment from "moment";
-import { Dropdown } from 'semantic-ui-react'
+
 
 
 //import { items, groups } from "../components/Task-timeLineList";
@@ -102,7 +102,7 @@ export default function TasksListPage() {
     let groupArr = items.reduce((accum, element, index) => {
       accum.push({
         id: parseInt(element.taskId),
-        title: `${element.taskType} (${element.driverName.first} ${element.driverName.last}`
+        title: `${element.taskType} (${element.driverName.first} ${element.driverName.last})`
       });
       return accum;
     }, []);
@@ -131,7 +131,7 @@ export default function TasksListPage() {
           defaultTimeStart={moment().add(-12, "hour")}
           defaultTimeEnd={moment().add(12, "hour")}
         />
-        <h4> Schedule can be dragged left to right, with zoom in and out</h4>
+        <h4> Schedule can be moved left to right, with zoom in and out</h4>
         <p>shift + mousewheel = move timeline left/right </p>
         <p> alt + mousewheel = zoom in/out</p>
         <p> ctrl + mousewheel = zoom in/out 10× faster</p>

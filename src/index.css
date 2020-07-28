@@ -7,16 +7,11 @@ old-rose: hsla(358, 33%, 59%, 1);
 raisin-black: hsla(240, 7%, 19%, 1);  */
 
 
-
-body{
+body {
   background-color: #2d2d34ff
 }
 
 .error {
     color: #9f3a38;
   }
-
-.driver_schedule {
-  height: auto
-}
 
