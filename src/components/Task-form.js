@@ -177,12 +177,12 @@ export default function TaskForm({task}) {
             </span>
           </Form.Field>
 
-          <Form.Field className={classnames({ error: errors.driverName })}>
-            <label htmlFor="driverName.first">
+          <Form.Field className={classnames({ error: errors.driverFirstName })}>
+            <label htmlFor="driverFirstName">
               Driver First Name
               <input
-                id="driverName.first"
-                name="driverName.first"
+                id="driverFirstName"
+                name="driverFirstName"
                 type="text"
                 placeholder="First Name"
                 ref={register({ required: true, minLength: 1 })}
@@ -190,36 +190,36 @@ export default function TaskForm({task}) {
             </label>
             <span className="error">
               {/* {console.log("in task form , errors is ", errors)} */}
-              {errors.driverName &&
-                errors.driverName.first.type === "required" &&
+              {errors.driverFirstName &&
+                errors.driverFirstName.type === "required" &&
                 "First Name Required"}
             </span>
             <span className="error">
-              {errors.driverName &&
-                errors.driverName.first.type === "minLength" &&
+              {errors.driverFirstName &&
+                errors.driverFirstName.type === "minLength" &&
                 "Must be 2 or more characters"}
             </span>
           </Form.Field>
 
-          <Form.Field className={classnames({ error: errors.driverName })}>
-            <label htmlFor="driverName.last">
+          <Form.Field className={classnames({ error: errors.driverLastName })}>
+            <label htmlFor="driverLastName.last">
               Driver Last Name
               <input
-                id="driverName.last"
-                name="driverName.last"
+                id="driverLastName.last"
+                name="driverLastName.last"
                 type="text"
                 placeholder="Last Name"
                 ref={register({ required: true, minLength: 2 })}
               />
             </label>
             <span className="error">
-              {errors.driverName &&
-                errors.driverName.last.type === "required" &&
+              {errors.driverLastName &&
+                errors.driverLastName.type === "required" &&
                 "Last Name Required"}
             </span>
             <span className="error">
-              {errors.driverName &&
-                errors.driverName.last.type === "minLength" &&
+              {errors.driverLastName &&
+                errors.driverLastName.type === "minLength" &&
                 "Must be 2 or more characters"}
             </span>
           </Form.Field>

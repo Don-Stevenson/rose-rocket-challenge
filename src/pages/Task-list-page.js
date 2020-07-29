@@ -6,6 +6,7 @@ import FlashMessage, { flashErrorMessage } from "../components/Flash-message";
 import Timeline from "react-calendar-timeline";
 import moment from "moment";
 import SimpleSelect from "../components/Driver-listMenu";
+import CsvDownload from 'react-json-to-csv'
 import driverCsvSelect from "../components/Driver-scheduleCSV"
 
 
@@ -100,7 +101,7 @@ export default function TasksListPage() {
     let groupArr = items.reduce((accum, element, index) => {
       accum.push({
         id: parseInt(element.taskId),
-        title: `${element.taskType} (${element.driverName.first} ${element.driverName.last})`
+        title: `${element.taskType} (${element.driverFirstName} ${element.driverLastName})`
       });
       return accum;
     }, []);
@@ -145,6 +146,7 @@ export default function TasksListPage() {
       }
       {state.message.content && <FlashMessage message={state.message} />}
       <TaskList tasks={state.tasks} />
+      <CsvDownload data={state.tasks} />
     </div>
   );
 }
