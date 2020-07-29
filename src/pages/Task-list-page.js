@@ -5,8 +5,8 @@ import axios from "axios";
 import FlashMessage, { flashErrorMessage } from "../components/Flash-message";
 import Timeline from "react-calendar-timeline";
 import moment from "moment";
-import SimpleSelect from "../components/Task-timeLineList";
-
+import SimpleSelect from "../components/Driver-listMenu";
+import driverCsvSelect from "../components/Driver-scheduleCSV"
 
 
 //import { items, groups } from "../components/Task-timeLineList";
@@ -50,15 +50,12 @@ export default function TasksListPage() {
       const startmin = parseInt(element.startTime.slice(3, 5));
       const stopHour = parseInt(element.stopTime.slice(0, 2));
       const stopMin = parseInt(element.stopTime.slice(3, 5));
-      //console.log("day month year", day, month, year)
-      // console.log(element.startTime);
-      // console.log("stop hour is", stopHour, stopMin);
+     
 
       accum.push({
         id: element._id,
         group: parseInt(element.taskId),
         title: element.taskType,
-        // date: moment().set({ year: 2020, month: 7, date: day }),
         start_time: moment().set({
           year: year,
           month: month,
@@ -114,12 +111,14 @@ export default function TasksListPage() {
   let calendarItems = makeCalendarItems(state.tasks);
   let calendarGroups = makeCalendarGroups(state.tasks);
 
-  console.log(
-    "after calendar items,",
-    calendarItems,
-    "calendar Groups",
-    calendarGroups
-    );
+  console.log(state.tasks)
+
+  // console.log(
+  //   "after calendar items,",
+  //   calendarItems,
+  //   "calendar Groups",
+  //   calendarGroups
+  //   );
     
     return (
       <div>

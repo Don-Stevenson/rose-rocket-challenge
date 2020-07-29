@@ -85,7 +85,7 @@ export default function TaskForm({task}) {
           <Form.Group widths="equal">
             <Form.Field className={classnames({ error: errors.taskId })}>
               <label htmlFor="taskId">
-                Task Id
+                Task Id - must be unique
                 <input
                   id="taskId"
                   name="taskId"
@@ -113,8 +113,8 @@ export default function TaskForm({task}) {
                   id="date"
                   name="date"
                   type="text"
-                  placeholder="dd/mm/yyy"
-                  ref={register({ required: true, minLength: 2 })}
+                  placeholder="dd-mm-yyyy"
+                  ref={register({ required: true, minLength: 10 })}
                 />
               </label>
               <span className="error">
