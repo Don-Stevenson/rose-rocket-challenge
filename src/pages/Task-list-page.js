@@ -7,10 +7,8 @@ import Timeline from "react-calendar-timeline";
 import moment from "moment";
 import SimpleSelect from "../components/Driver-listMenu";
 import CsvDownload from 'react-json-to-csv'
-import driverCsvSelect from "../components/Driver-scheduleCSV"
-
-
-//import { items, groups } from "../components/Task-timeLineList";
+import createDriverCSV from "../helpers/createDriverCSV"
+import makeCalendarGroups from "../helpers/createCalendarGroups"
 
 export default function TasksListPage() {
   // state handling using useContext
@@ -43,10 +41,8 @@ export default function TasksListPage() {
   // thats react calender can render)
   // *****************************************************************
   const makeCalendarItems = items => {
-    let calenderArr = items.reduce((accum, element) => {
-      // NOTE
-      // use Date.parse element.date
-      // try to see if backend accepts this format as a Date type
+    const calenderArr = items.reduce((accum, element) => {
+      
       const day = parseInt(element.date.slice(3, 5))
       const month = parseInt(element.date.slice(0, 2)) -1 ; // month is a zero based index in moment
       const year = parseInt(element.date.slice(6, 10));
@@ -55,7 +51,6 @@ export default function TasksListPage() {
       const stopHour = parseInt(element.stopTime.slice(0, 2));
       const stopMin = parseInt(element.stopTime.slice(3, 5));
      
-
       accum.push({
         id: element._id,
         group: parseInt(element.taskId),
@@ -85,7 +80,6 @@ export default function TasksListPage() {
             console.log("You clicked double!");
             
             return (
-
               <TaskList tasks={state.tasks} />
             )
           },
@@ -100,30 +94,11 @@ export default function TasksListPage() {
     return calenderArr;
   };
 
-  const makeCalendarGroups = items => {
-    let groupArr = items.reduce((accum, element) => {
-      accum.push({
-        id: parseInt(element.taskId),
-        title: `${element.taskType} (${element.driverFirstName} ${element.driverLastName})`
-      });
-      return accum;
-    }, []);
-    return groupArr;
-  };
 
   // call the functions and return them into new arrays of objects
-  let calendarItems = makeCalendarItems(state.tasks);
-  let calendarGroups = makeCalendarGroups(state.tasks);
-
-  console.log(state.tasks)
-
-  // console.log(
-  //   "after calendar items,",
-  //   calendarItems,
-  //   "calendar Groups",
-  //   calendarGroups
-  //   );
-    
+  const calendarItems = makeCalendarItems(state.tasks);
+  const calendarGroups = makeCalendarGroups(state.tasks);
+  
     return (
       <div>
       <div className="driver_schedule">

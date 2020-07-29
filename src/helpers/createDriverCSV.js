@@ -100,7 +100,7 @@ const data = [
   // whether a specific task is present
   //***************************************************************/
   
-  const driverCSV = (data, driverLastName, dateInterval) => {
+  export default function createDriverCSV (data, driverLastName, dateInterval) {
     const driverTasks = data.filter(currentTask => {
       return currentTask.driverLastName === driverLastName;
     });
@@ -110,5 +110,5 @@ const data = [
     return durationObj;
   };
   
-  console.log(driverCSV(data, "Lastname1", 100));
+  console.log(createDriverCSV(data, "Lastname1", 100));
   
