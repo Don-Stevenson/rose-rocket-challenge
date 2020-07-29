@@ -43,14 +43,12 @@ export default function TasksListPage() {
   // thats react calender can render)
   // *****************************************************************
   const makeCalendarItems = items => {
-    let calenderArr = items.reduce((accum, element, index) => {
+    let calenderArr = items.reduce((accum, element) => {
       // NOTE
       // use Date.parse element.date
       // try to see if backend accepts this format as a Date type
-
-      const day = parseInt(element.date.slice(0, 2));
-      
-      const month = parseInt(element.date.slice(3, 5)) - 1; // month is a zero based index in moment
+      const day = parseInt(element.date.slice(3, 5))
+      const month = parseInt(element.date.slice(0, 2)) -1 ; // month is a zero based index in moment
       const year = parseInt(element.date.slice(6, 10));
       const startHour = parseInt(element.startTime.slice(0, 2));
       const startmin = parseInt(element.startTime.slice(3, 5));
@@ -103,7 +101,7 @@ export default function TasksListPage() {
   };
 
   const makeCalendarGroups = items => {
-    let groupArr = items.reduce((accum, element, index) => {
+    let groupArr = items.reduce((accum, element) => {
       accum.push({
         id: parseInt(element.taskId),
         title: `${element.taskType} (${element.driverFirstName} ${element.driverLastName})`
