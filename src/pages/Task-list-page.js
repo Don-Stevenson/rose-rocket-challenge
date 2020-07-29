@@ -44,7 +44,12 @@ export default function TasksListPage() {
   // *****************************************************************
   const makeCalendarItems = items => {
     let calenderArr = items.reduce((accum, element, index) => {
+      // NOTE
+      // use Date.parse element.date
+      // try to see if backend accepts this format as a Date type
+
       const day = parseInt(element.date.slice(0, 2));
+      
       const month = parseInt(element.date.slice(3, 5)) - 1; // month is a zero based index in moment
       const year = parseInt(element.date.slice(6, 10));
       const startHour = parseInt(element.startTime.slice(0, 2));

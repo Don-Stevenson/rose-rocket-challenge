@@ -113,7 +113,7 @@ export default function TaskForm({task}) {
                   id="date"
                   name="date"
                   type="text"
-                  placeholder="dd-mm-yyyy"
+                  placeholder="mm-dd-yyyy"
                   ref={register({ required: true, minLength: 10 })}
                 />
               </label>
