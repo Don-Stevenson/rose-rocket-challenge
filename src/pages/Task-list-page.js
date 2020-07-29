@@ -139,15 +139,16 @@ export default function TasksListPage() {
         <p> ctrl + mousewheel = zoom in/out 10× faster</p>
       </div>
       <h2>List of Driver's Tasks</h2>
-      <p>Please Note: Each task must have its own unique id</p>
-
+      <p> Driver Schedule in CSV format</p>
+      <CsvDownload data={state.tasks} />
       {
         // when the message has content, render a flash message
       }
       {state.message.content && <FlashMessage message={state.message} />}
+      <p> </p>
       <TaskList tasks={state.tasks} />
-      <p> Driver Schedule in CSV</p>
-      <CsvDownload data={state.tasks} />
+      
+    
     </div>
   );
 }
