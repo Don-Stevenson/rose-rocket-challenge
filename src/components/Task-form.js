@@ -202,11 +202,11 @@ export default function TaskForm({task}) {
           </Form.Field>
 
           <Form.Field className={classnames({ error: errors.driverLastName })}>
-            <label htmlFor="driverLastName.last">
+            <label htmlFor="driverLastName">
               Driver Last Name
               <input
-                id="driverLastName.last"
-                name="driverLastName.last"
+                id="driverLastName"
+                name="driverLastName"
                 type="text"
                 placeholder="Last Name"
                 ref={register({ required: true, minLength: 2 })}

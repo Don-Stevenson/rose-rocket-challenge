@@ -45,7 +45,7 @@ export default function TaskCard({ task }) {
         <Card.Description>
           <p>
             <Icon name="user outline" /> Driver: {task.driverFirstName}{" "}
-            {task.driverFirstName}
+            {task.driverLastName}
           </p>
           <p>
             <Icon name="calendar alternate outline" /> Date: {task.date}
