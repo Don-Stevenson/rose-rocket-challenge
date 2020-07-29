@@ -5,17 +5,16 @@ import axios from "axios";
 import { Redirect } from "react-router";
 import classnames from "classnames";
 import { TaskContext } from "../context/Task-context";
-import FlashMessage,{ flashErrorMessage } from "./Flash-message";
+import FlashMessage, { flashErrorMessage } from "./Flash-message";
 
-export default function TaskForm({task}) {
+export default function TaskForm({ task }) {
   //handling states using useContext on TaskConext
   const [state, dispatch] = useContext(TaskContext);
   const { register, errors, handleSubmit } = useForm({
-    defaultValues: task,
+    defaultValues: task
   });
   const [redirect, setRedirect] = useState(false);
-  
-  
+
   //console.log("here in taskform", task)
 
   // function that sends data to the server or returns an error if there is a problem
@@ -52,7 +51,7 @@ export default function TaskForm({task}) {
   };
 
   // handling the onSubmit to is see if task id is present, if so
-  // run update task , other wise create a new task  
+  // run update task , other wise create a new task
 
   const onSubmit = async data => {
     //console.log("here in on submit")
@@ -63,7 +62,6 @@ export default function TaskForm({task}) {
     }
   };
 
- 
   // if redirect is true, route to the homepage
   if (redirect) {
     return <Redirect to="/" />;
@@ -73,24 +71,26 @@ export default function TaskForm({task}) {
     <Grid centered columns={2}>
       <Grid.Column>
         <h1 style={{ marginTop: "1em" }}>
-          {//console.log("here in task form", task)
+          {
+            //console.log("here in task form", task)
           }
           {task._id ? "Edit Driver's Task" : "Add New Drivers Task"}
         </h1>
-        {// if there is an error flash the message 
-        } 
+        {
+          // if there is an error flash the message
+        }
         {state.message.content && <FlashMessage message={state.message} />}
 
         <Form onSubmit={handleSubmit(onSubmit)} loading={state.loading}>
           <Form.Group widths="equal">
             <Form.Field className={classnames({ error: errors.taskId })}>
               <label htmlFor="taskId">
-                Task Id - must be unique
+                Task Id (Must be a unique, 4 digit number)
                 <input
                   id="taskId"
                   name="taskId"
                   type="text"
-                  placeholder="Must be unique 4 digit number"
+                  placeholder="Must be a unique, 4 digit number"
                   ref={register({ required: true, minLength: 2 })}
                 />
               </label>
@@ -108,7 +108,7 @@ export default function TaskForm({task}) {
 
             <Form.Field className={classnames({ error: errors.date })}>
               <label htmlFor="date">
-                Date
+                Date (mm-dd-yyyy)
                 <input
                   id="date"
                   name="date"
@@ -130,10 +130,9 @@ export default function TaskForm({task}) {
             </Form.Field>
           </Form.Group>
 
-
           <Form.Field className={classnames({ error: errors.location })}>
             <label htmlFor="location">
-              Location
+              Location (Street address, City, Prov / State)
               <input
                 id="location"
                 name="location"
@@ -156,7 +155,7 @@ export default function TaskForm({task}) {
 
           <Form.Field className={classnames({ error: errors.taskType })}>
             <label htmlFor="taskType">
-              Task Type
+              Task Type (Pick Up, Drop Off or Other)
               <input
                 id="taskType"
                 name="taskType"
@@ -189,7 +188,6 @@ export default function TaskForm({task}) {
               />
             </label>
             <span className="error">
-              {/* {console.log("in task form , errors is ", errors)} */}
               {errors.driverFirstName &&
                 errors.driverFirstName.type === "required" &&
                 "First Name Required"}
@@ -226,12 +224,12 @@ export default function TaskForm({task}) {
           <Form.Group widths="equal">
             <Form.Field className={classnames({ error: errors.startTime })}>
               <label htmlFor="startTime">
-                Task Start Time
+                Task Start Time (24hr format)
                 <input
                   id="startTime"
                   name="startTime"
                   type="text"
-                  placeholder="24hr Clock: e.g. 13:00"
+                  placeholder="24hr format: e.g. 13:00"
                   ref={register({ required: true, minLength: 2 })}
                 />
               </label>
@@ -249,7 +247,7 @@ export default function TaskForm({task}) {
 
             <Form.Field className={classnames({ error: errors.stopTime })}>
               <label htmlFor="stopTime">
-                Task Stop Time
+                Task Stop Time (24hr format)
                 <input
                   id="stopTime"
                   name="stopTime"
