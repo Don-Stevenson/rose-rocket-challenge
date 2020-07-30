@@ -14,7 +14,7 @@ export default function TasksListPage() {
   // state handling using useContext
   const [state, dispatch] = useContext(TaskContext);
 
-  // using useEffect to get task info
+  // using useEffect to get task info and dispatch that json data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -38,7 +38,7 @@ export default function TasksListPage() {
   // More ideally, the backend data structure would already be in the correct format for react calendar.
 
   // functions that take state and return them in object formats
-  // thats react calender can render)
+  // thats react calender can render
   // *****************************************************************
   const makeCalendarItems = items => {
     const calenderArr = items.reduce((accum, element) => {

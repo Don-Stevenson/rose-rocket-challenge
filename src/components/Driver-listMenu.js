@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -17,10 +17,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function SimpleSelect({tasks}) {
   const classes = useStyles();
-  const [age, setAge] = React.useState("");
+  const [driver, setDriver] = useState("");
 
   const handleChange = event => {
-    setAge(event.target.value);
+    setDriver(event.target.value);
   };
   // Logic
   // set drivers list by calling using tasks and returning drivers list by taskId or driverLastName
@@ -33,14 +33,14 @@ export default function SimpleSelect({tasks}) {
   return (
     <div>
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">Drivers List</InputLabel>
+        <InputLabel id="simple-select-label">Drivers List</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
+          labelId="simple-select-label"
+          id="simple-select"
+          value={driver}
           onChange={handleChange}
         >
-          <MenuItem value={10}>driver</MenuItem>
+          <MenuItem value={tasks.driverFirstName}>driver</MenuItem>
           <MenuItem value={20}>driver1</MenuItem>
           <MenuItem value={30}>driver2</MenuItem>
         </Select>
