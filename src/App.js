@@ -4,6 +4,7 @@ import { Container } from "semantic-ui-react";
 import TaskListPage from "./pages/Task-list-page";
 import TaskFormPage from "./pages/Task-form-page";
 import "./timeline.scss";
+import "./index.css"
 
 const App = () => {
   return (

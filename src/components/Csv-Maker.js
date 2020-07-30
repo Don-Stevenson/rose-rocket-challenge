@@ -19,9 +19,9 @@ const CreateCSV = ({tasks}) => {
  
             }
 
-    console.log(tasks, state)
+   
             // const CSV = createDriverCSV(tasks, state, 2 )
-    // console.log(CSV)
+    
  }
 
 
