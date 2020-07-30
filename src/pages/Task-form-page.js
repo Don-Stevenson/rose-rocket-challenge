@@ -5,15 +5,14 @@ import { flashErrorMessage } from '../components/Flash-message';
 import { TaskContext } from '../context/Task-context';
 
 export default function TaskFormPage ({match}) {
-  // handling staate
+  // handling state
   const [state, dispatch] = useContext(TaskContext);
   const [loading, setLoading] = useState(true);
 
- 
   useEffect(() => {
     const { _id } = match.params; // Grab URL _id
- 
-    if (_id) {
+    // if the id matches get the json for that and fetch the data
+     if (_id) {
       const fetchData = async () => {
         try {
           const response = await axios.get(
@@ -25,6 +24,7 @@ export default function TaskFormPage ({match}) {
             payload: response.data,
           });
           setLoading(false);
+          // else catch the error
         } catch (error) {
           flashErrorMessage(dispatch, error);
         }
