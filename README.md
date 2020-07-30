@@ -12,7 +12,7 @@
 - hook up the logic for the drivers drop down to display the tasks in the calendar / task cards for the selected driver
 - impliment the logic in the createDriverCSV helper to render the CSV file for the selected driver
 - Refactor, Refactor, Refactor!
-- spend more time on the styling and design
+- spend more time on the styling and design, especially for mobile
 - Make / Import more helper functions to clean up the code further
 - add maps to the destinations for dispatchers or drivers
 - take in drivers phone numbers and send out addresses and maps via twillio or other sms service
@@ -22,7 +22,8 @@
 - Bowser may require a resize before the calendar renders the individual tasks
 - react calender seems extra finicky with scolling and resizing, would have liked to have solved that
 
-
+### Rose Rocket Front End Looks like
+[Front End Picture here](github link here)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
