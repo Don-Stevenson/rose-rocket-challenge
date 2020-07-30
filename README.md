@@ -1,15 +1,24 @@
+# Rose Rocket Challenge Front End
+The challenge I set out was to build a working dispatch site to create, update and delete driver tasks. I used react-calendar-time-line to render a driver's schedule and used cards to handle displaying task details. 
+
+I really enjoyed working on this project; I learned a ton and was able to accomplish a lot more than I thought I could!
+
+Hindsight being 20/20, I realize that I bit off more than I could chew in terms of handling real dates / calendars and the complications that arrise from that. That said, I am stand behind my decision try something more difficult because I learned more that way.
+
+
 ### Things I am really proud of!
 - I learned to use a ton of new libraries! e.g. react-calendar-timeline, moment, date-fns, react-json-to-csv, semantic-ui, etc.
 - Using a reducer to handle the state  
 - I chose to handle real dates and display them in a calendar. This was really tough, and I am really pleased that I was able to work and use actual dates.
 - Getting a server up and running that persists data!
-- Tackling a full stack project for the first time by myself with minimal
+- Tackling a full stack project for the first time by myself with minimal input from others
 - Getting some styling done with the react-calendar-timeline!
 - Getting a sense of accomplishment and joy for what I was able to complete in a week!!!
 
 
 ### If I had more time (in no particular order) ...
 - hook up the logic for the drivers drop down to display the tasks in the calendar / task cards for the selected driver
+- Schedule doesn't auto update.  It requires a refresh of the browser.  This is certainly fixable within react.
 - impliment the logic in the createDriverCSV helper to render the CSV file for the selected driver
 - Refactor, Refactor, Refactor!
 - spend more time on the styling and design, especially for mobile
