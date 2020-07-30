@@ -29,9 +29,9 @@ const CreateCSV = ({tasks}) => {
     <div className="csvContainer">
       <SimpleSelectDrivers className="driverName"> </SimpleSelectDrivers>
       {/* <SimpleSelectDays className="noOfDays"> </SimpleSelectDays> */}
-      <Button primary type="submit" onClick={makeCSV} onSelect={handleSelect}>
+      {/* <Button primary type="submit" onClick={makeCSV} onSelect={handleSelect}>
         Save
-      </Button>
+      </Button> */}
     </div>
   );
 };

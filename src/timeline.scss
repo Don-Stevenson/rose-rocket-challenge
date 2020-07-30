@@ -1,4 +1,3 @@
-
 $item-color: white;
 $item-background: #ceb1beff;
 $item-border: 1px solid #ceb1beff;
@@ -17,34 +16,27 @@ $sidebar-background-color: #c52020;
 $list-item-padding: 0 4px;
 $weekend: rgba(250, 246, 225, 0.5);
 
-body {
-  color:  #2d2d34ff;
-  background-color:  #2d2d34ff;
-}
-
 h1 {
   text-align: center;
+  color: #2d2d34ff;
 }
 
 h2 {
   text-align: left;
 }
 
-.container{
+.container {
   padding: 10px;
-  background-color:  rgb(255, 250, 252);
 }
 
-.csvContainer{
-  display: flex
-}
+// .csvContainer {
+//   display: flex;
+// }
 
 .CSVfile {
-  text-align: right ;
-  padding-top: 30px;
-  padding-right: 20px;
+  text-align: right;
+  padding: 10px;
 }
-
 
 .react-calendar-timeline {
   * {
@@ -68,11 +60,10 @@ h2 {
   }
 
   .rct-item {
-    
     &:hover {
       z-index: 88;
     }
-    
+
     /*text*/
     .rct-item-content {
       color: #2d2d34ff;
@@ -119,7 +110,7 @@ h2 {
     }
   }
 
-   .rct-vertical-lines {
+  .rct-vertical-lines {
     .rct-vl {
       position: absolute;
       border-left: 1px solid $border-color;
@@ -171,31 +162,26 @@ h2 {
     cursor: pointer;
     font-size: 14px;
     background-color: rgb(240, 240, 240);
-    border-left:  2px solid #bbb;
+    border-left: 2px solid #bbb;
   }
 
   .rct-dateHeader-primary {
     background-color: initial;
-    border-left:  1px solid #bbb;
+    border-left: 1px solid #bbb;
     border-right: 1px solid #bbb;
-    color: #fff
+    color: #fff;
   }
 
   /* top solidbar of schedule*/
   .rct-header-root {
     background: #b97375ff;
     border-bottom: 1px solid #bbb;
-   
   }
 
   .rct-calendar-header {
-    border: 1px solid #bbb,
-
+    border: 1px solid #bbb;
   }
-
 }
-
-
 
 // /* SCSS HEX */
 // $lavender-blush: #f1e4e8ff;

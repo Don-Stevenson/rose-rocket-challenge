@@ -85,7 +85,7 @@ export default function TaskForm({ task }) {
           <Form.Group widths="equal">
             <Form.Field className={classnames({ error: errors.taskId })}>
               <label htmlFor="taskId">
-                Task Id (Unique 4 digit number)
+                Task Id (Unique 4 digits)
                 <input
                   id="taskId"
                   name="taskId"
@@ -108,7 +108,7 @@ export default function TaskForm({ task }) {
 
             <Form.Field className={classnames({ error: errors.date })}>
               <label htmlFor="date">
-                Date (mm-dd-yyyy)
+                Date(mm-dd-yyyy)
                 <input
                   id="date"
                   name="date"
@@ -246,9 +246,7 @@ export default function TaskForm({ task }) {
             </Form.Field>
 
             <Form.Field className={classnames({ error: errors.stopTime })}>
-              <label htmlFor="stopTime"> <Button primary type="submit">
-            Save
-          </Button>
+              <label htmlFor="stopTime"> 
                 Task Stop Time (24hr format)
                 <input
                   id="stopTime"
@@ -261,9 +259,7 @@ export default function TaskForm({ task }) {
               <span className="error">
                 {errors.stopTime &&
                   errors.stopTime.type === "required" &&
-                  "Task Type Required"} <Button primary type="submit">
-                  Save
-                </Button>
+                  "Task Type Required"} 
               </span>
               <span className="error">
                 {errors.stopTime &&
@@ -273,7 +269,7 @@ export default function TaskForm({ task }) {
             </Form.Field>
           </Form.Group>
 
-          <Button primary type="submit">
+          <Button basic color='blue' type="submit">
             Save
           </Button>
         </Form>

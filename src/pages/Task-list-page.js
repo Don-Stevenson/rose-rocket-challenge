@@ -6,10 +6,10 @@ import FlashMessage, { flashErrorMessage } from "../components/Flash-message";
 import Timeline from "react-calendar-timeline";
 import moment from "moment";
 import SimpleSelect from "../components/Driver-listMenu";
-import CsvDownload from 'react-json-to-csv'
-import CreateCSV from "../components/Csv-Maker"
+import CsvDownload from "react-json-to-csv";
+// import CreateCSV from "../components/Csv-Maker"
 // import createDriverCSV from "../helpers/createDriverCSV"
-import makeCalendarGroups from "../helpers/createCalendarGroups"
+// import makeCalendarGroups from "../helpers/createCalendarGroups";
 
 export default function TasksListPage() {
   // state handling using useContext
@@ -20,7 +20,7 @@ export default function TasksListPage() {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:3030/rr-api");
-     
+
         dispatch({
           type: "FETCH_TASKS",
           payload: response.data.data || response.data // in case pagination is disabled
@@ -43,15 +43,14 @@ export default function TasksListPage() {
   // *****************************************************************
   const makeCalendarItems = items => {
     const calenderArr = items.reduce((accum, element) => {
-      
-      const day = parseInt(element.date.slice(3, 5))
-      const month = parseInt(element.date.slice(0, 2)) -1 ; // month is a zero based index in moment
+      const day = parseInt(element.date.slice(3, 5));
+      const month = parseInt(element.date.slice(0, 2)) - 1; // month is a zero based index in moment
       const year = parseInt(element.date.slice(6, 10));
       const startHour = parseInt(element.startTime.slice(0, 2));
       const startmin = parseInt(element.startTime.slice(3, 5));
       const stopHour = parseInt(element.stopTime.slice(0, 2));
       const stopMin = parseInt(element.stopTime.slice(3, 5));
-     
+
       accum.push({
         id: element._id,
         group: parseInt(element.taskId),
@@ -80,15 +79,15 @@ export default function TasksListPage() {
           onDoubleClick: () => {
             console.log("You clicked double!");
             // insert logic here about how to return the card for the task that was click upon
-            
+
             // return (
             //   <TaskList tasks={state.tasks.filter(driverFirstName === event.Selected)} />
             // )
           },
           className: "weekend",
           style: {
-            background:  "#ceb1beff"
-         }
+            background: "#ceb1beff"
+          }
         }
       });
       return accum;
@@ -97,15 +96,26 @@ export default function TasksListPage() {
   };
 
 
+  const makeCalendarGroups = items => {
+    let groupArr = items.reduce((accum, element) => {
+      accum.push({
+        id: parseInt(element.taskId),
+        title: `${element.taskType} (${element.driverFirstName} ${element.driverLastName})`
+      });
+      return accum;
+    }, []);
+    return groupArr;
+  };
+
   // call the functions and return them into new arrays of objects
   const calendarItems = makeCalendarItems(state.tasks);
   const calendarGroups = makeCalendarGroups(state.tasks);
   
-    return (
-      <div>
+  return (
+    <div>
       <div className="driver_schedule">
         <h2> Driver Schedule </h2>
-      <SimpleSelect tasks={state.tasks}></SimpleSelect>
+        {/* <SimpleSelect tasks={state.tasks}></SimpleSelect> */}
 
         <Timeline
           groups={calendarGroups}
@@ -119,19 +129,18 @@ export default function TasksListPage() {
         <p> ctrl + mousewheel = zoom in/out 10× faster</p>
       </div>
       <h2>List of Driver's Tasks</h2>
-  
+
       {
         // when the message has content, render a flash message
       }
       {state.message.content && <FlashMessage message={state.message} />}
       <p> </p>
       <TaskList tasks={state.tasks} />
-      <div className="CSVfile">
 
-      <p> Complete Driver Schedule in CSV format</p>
-      <CsvDownload data={state.tasks} />
-      {/* <CreateCSV tasks={state.tasks} /> */}
-    
+      <div className="CSVfile">
+        <p> Complete Driver Schedule in CSV format</p>
+        <CsvDownload data={state.tasks} />
+        {/* <CreateCSV tasks={state.tasks} /> */}
       </div>
     </div>
   );
