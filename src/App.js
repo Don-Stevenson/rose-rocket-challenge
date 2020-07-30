@@ -5,7 +5,7 @@ import TaskListPage from "./pages/Task-list-page";
 import TaskFormPage from "./pages/Task-form-page";
 import "./timeline.scss";
 
-const App = ({ children }) => {
+const App = () => {
   return (
      <Container>
       <h1> Rose Rocket Dispatch Centre</h1>

@@ -15,21 +15,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const SimpleSelectDrivers = ({tasks}) => {
+export default function SimpleSelectDays({tasks}) {
   const classes = useStyles();
   const [state, setState] = useState("");
 
   const handleChange = event => {
     setState(event.target.value);
   };
-  // Logic
-  // set drivers list by calling using tasks and returning drivers list by taskId or driverLastName
-  // const cards = () => {
-  //   return tasks.map(task => {
-  //     return <TaskCard key={task._id} task={task} />;
-  //   });
-  // };
-
   
 
   return (
@@ -38,17 +30,16 @@ const SimpleSelectDrivers = ({tasks}) => {
         <InputLabel id="simple-select-label">Drivers List</InputLabel>
         <Select
           labelId="simple-select-label"
-          id="driverName"
+          id="simple-select"
           value={tasks}
           onChange={handleChange}
         >
-          <MenuItem value={tasks}>{state.driverLastName}</MenuItem>
-          <MenuItem value={"S."}>Smith</MenuItem>
-          <MenuItem value={"Smith"}>driver2</MenuItem>
+          <MenuItem value={2}>2 days</MenuItem>
+          <MenuItem value={4}>4 days </MenuItem>
+          <MenuItem value={7}>7 days</MenuItem>
+          <MenuItem value={28}>28 days</MenuItem>
         </Select>
       </FormControl>
     </div>
   );
 }
-
-export default SimpleSelectDrivers

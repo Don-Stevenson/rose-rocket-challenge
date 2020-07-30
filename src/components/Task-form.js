@@ -246,7 +246,9 @@ export default function TaskForm({ task }) {
             </Form.Field>
 
             <Form.Field className={classnames({ error: errors.stopTime })}>
-              <label htmlFor="stopTime">
+              <label htmlFor="stopTime"> <Button primary type="submit">
+            Save
+          </Button>
                 Task Stop Time (24hr format)
                 <input
                   id="stopTime"
@@ -259,7 +261,9 @@ export default function TaskForm({ task }) {
               <span className="error">
                 {errors.stopTime &&
                   errors.stopTime.type === "required" &&
-                  "Task Type Required"}
+                  "Task Type Required"} <Button primary type="submit">
+                  Save
+                </Button>
               </span>
               <span className="error">
                 {errors.stopTime &&
