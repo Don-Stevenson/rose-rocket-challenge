@@ -1,3 +1,30 @@
+### Things I am really proud of!
+- I learned to use a ton of new libraries! e.g. react-calendar-timeline, moment, date-fns, react-json-to-csv, semantic-ui, etc.
+- Using a reducer to handle the state  
+- I chose to handle real dates and display them in a calendar. This was really tough, and I am really pleased that I was able to work and use actual dates.
+- Getting a server up and running that persists data!
+- Tackling a full stack project for the first time by myself with minimal
+- Getting some styling done with the react-calendar-timeline!
+- Getting a sense of accomplishment and joy for what I was able to complete in a week!!!
+
+
+### If I had more time (in no particular order) ...
+- hook up the logic for the drivers drop down to display the tasks in the calendar / task cards for the selected driver
+- impliment the logic in the createDriverCSV helper to render the CSV file for the selected driver
+- Refactor, Refactor, Refactor!
+- spend more time on the styling and design
+- Make / Import more helper functions to clean up the code further
+- add maps to the destinations for dispatchers or drivers
+- take in drivers phone numbers and send out addresses and maps via twillio or other sms service
+- handled click and drag tasks in the calendar that auto updates the task times
+
+### Bugs
+- Bowser may require a resize before the calendar renders the individual tasks
+- react calender seems extra finicky with scolling and resizing, would have liked to have solved that
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -26,15 +53,6 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### Bugs
-Error message persists after you click save.
-
-### If I had more time ...
-- refactor lots of function into a helper function folder
-- add maps to the destinations for dispatchers or drivers
-- take in drivers phone numbers and send out addresses and maps via twillio or other sms service
--
 
 ### `npm run eject`
 
