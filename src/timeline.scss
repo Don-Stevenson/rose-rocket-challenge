@@ -17,10 +17,24 @@ $sidebar-background-color: #c52020;
 $list-item-padding: 0 4px;
 $weekend: rgba(250, 246, 225, 0.5);
 
-body{
+body {
   color:  #2d2d34ff;
-
 }
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+}
+
+.CSVfile {
+  text-align: right ;
+  padding-top: 30px;
+  padding-right: 20px;
+}
+
 
 .react-calendar-timeline {
   * {

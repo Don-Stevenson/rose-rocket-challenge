@@ -85,12 +85,12 @@ export default function TaskForm({ task }) {
           <Form.Group widths="equal">
             <Form.Field className={classnames({ error: errors.taskId })}>
               <label htmlFor="taskId">
-                Task Id (Must be a unique, 4 digit number)
+                Task Id (Unique 4 digit number)
                 <input
                   id="taskId"
                   name="taskId"
                   type="text"
-                  placeholder="Must be a unique, 4 digit number"
+                  placeholder="Use unique 4 digit number"
                   ref={register({ required: true, minLength: 2 })}
                 />
               </label>
