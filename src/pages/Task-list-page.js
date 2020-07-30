@@ -19,7 +19,7 @@ export default function TasksListPage() {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:3030/rr-api");
-        // console.log("response is", response.data.data);
+     
         dispatch({
           type: "FETCH_TASKS",
           payload: response.data.data || response.data // in case pagination is disabled
@@ -78,10 +78,11 @@ export default function TasksListPage() {
           "aria-hidden": true,
           onDoubleClick: () => {
             console.log("You clicked double!");
+            // insert logic here about how to return the card for the task that was click upon
             
-            return (
-              <TaskList tasks={state.tasks} />
-            )
+            // return (
+            //   <TaskList tasks={state.tasks.filter(driverFirstName === event.Selected)} />
+            // )
           },
           className: "weekend",
           style: {

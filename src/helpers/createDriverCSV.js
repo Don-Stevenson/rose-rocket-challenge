@@ -85,6 +85,8 @@ const data = [
               break;
             case "Other":
               durationObj[i].other += 1;
+              break
+             // no default 
           }
         }
       }
@@ -110,5 +112,5 @@ const data = [
     return durationObj;
   };
   
-  console.log(createDriverCSV(data, "Lastname1", 100));
+  //createDriverCSV(data, "Lastname1", 100)
   

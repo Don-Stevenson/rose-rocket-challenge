@@ -15,12 +15,9 @@ export default function TaskForm({ task }) {
   });
   const [redirect, setRedirect] = useState(false);
 
-  //console.log("here in taskform", task)
-
   // function that sends data to the server or returns an error if there is a problem
   const createTask = async data => {
     try {
-      //console.log("here in create task data is", data)
       const response = await axios.post("http://localhost:3030/rr-api", data);
       dispatch({
         type: "CREATE_TASK",
