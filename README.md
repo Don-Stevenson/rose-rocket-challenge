@@ -11,7 +11,7 @@ Hindsight being 20/20, I realize that I bit off more than I could chew in terms 
 - Using a reducer to handle the state  
 - I chose to handle real dates and display them in a calendar. This was really tough, and I am really pleased that I was able to work and use actual dates.
 - Getting a server up and running that persists data!
-- Tackling isisa full stack project for the first time by myself with minimal
+- Tackling a full stack project for the first time by myself with minimal input from others
 - Getting some styling done with the react-calendar-timeline!
 - Getting a sense of accomplishment and joy for what I was able to complete in a week!!!
 
