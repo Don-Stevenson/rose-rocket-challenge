@@ -17,20 +17,13 @@ const useStyles = makeStyles(theme => ({
 
 const SimpleSelectDrivers = ({tasks}) => {
   const classes = useStyles();
-  const [state, setState] = useState("");
+  const [driver, setDriver] = useState("");
 
-  const handleChange = event => {
-    setState(event.target.value);
+
+const handleChange = (event) => {
+    setDriver(event.target.value);
   };
-  // Logic
-  // set drivers list by calling using tasks and returning drivers list by taskId or driverLastName
-  // const cards = () => {
-  //   return tasks.map(task => {
-  //     return <TaskCard key={task._id} task={task} />;
-  //   });
-  // };
-
-  
+   
 
   return (
     <div>
@@ -39,12 +32,14 @@ const SimpleSelectDrivers = ({tasks}) => {
         <Select
           labelId="simple-select-label"
           id="driverName"
-          value={tasks}
+          value={driver}
           onChange={handleChange}
         >
-          <MenuItem value={tasks}>{state.driverLastName}</MenuItem>
-          <MenuItem value={"S."}>Smith</MenuItem>
-          <MenuItem value={"Smith"}>driver2</MenuItem>
+          {
+            tasks.map((task, index) =>(
+              <MenuItem key={index} value={index}>{task.driverFirstName} {task.driverLastName}</MenuItem>
+            ))
+          }
         </Select>
       </FormControl>
     </div>

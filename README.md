@@ -28,7 +28,7 @@ Hindsight being 20/20, I realize that I bit off more than I could chew in terms 
 - handled click and drag tasks in the calendar that auto updates the task times
 
 ### Bugs
-- Bowser may require a resize before the calendar renders the individual tasks
+- Bowser may require a resize before the react calendar timeline renders the individual tasks - works fine on Mac's, not so well on linux systems
 - react calender seems extra finicky with scolling and resizing, would have liked to have solved that
 
 ### Rose Rocket Front End Looks like

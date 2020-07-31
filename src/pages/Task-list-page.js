@@ -5,7 +5,7 @@ import axios from "axios";
 import FlashMessage, { flashErrorMessage } from "../components/Flash-message";
 import Timeline from "react-calendar-timeline";
 import moment from "moment";
-// import SimpleSelect from "../components/Driver-listMenu";
+import SimpleSelect from "../components/Driver-listMenu";
 import CsvDownload from "react-json-to-csv";
 // import CreateCSV from "../components/Csv-Maker"
 // import createDriverCSV from "../helpers/createDriverCSV"
@@ -116,7 +116,7 @@ export default function TasksListPage() {
     <div>
       <div className="driver_schedule">
         <h2> Driver Schedule </h2>
-        {/* <SimpleSelect tasks={state.tasks}></SimpleSelect> */}
+        <SimpleSelect tasks={state.tasks}></SimpleSelect>
 
         <Timeline
           groups={calendarGroups}
@@ -124,7 +124,7 @@ export default function TasksListPage() {
           defaultTimeStart={moment().add(-12, "hour")}
           defaultTimeEnd={moment().add(12, "hour")}
         />
-        <h4> Schedule can be moved left to right, with zoom in and out</h4>
+        <h4> Schedule can be moved dragged left to right, with zoom in and out</h4>
         <p> shift + mousewheel = move timeline left/right </p>
         <p> alt + mousewheel = zoom in/out</p>
         <p> ctrl + mousewheel = zoom in/out 10× faster</p>
