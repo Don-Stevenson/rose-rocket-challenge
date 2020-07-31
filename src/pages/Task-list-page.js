@@ -5,7 +5,7 @@ import axios from "axios";
 import FlashMessage, { flashErrorMessage } from "../components/Flash-message";
 import Timeline from "react-calendar-timeline";
 import moment from "moment";
-import SimpleSelect from "../components/Driver-listMenu";
+// import SimpleSelect from "../components/Driver-listMenu";
 import CsvDownload from "react-json-to-csv";
 // import CreateCSV from "../components/Csv-Maker"
 // import createDriverCSV from "../helpers/createDriverCSV"
@@ -37,6 +37,7 @@ export default function TasksListPage() {
   // I do not consider this optimal practice in production.
   // I consider this a very make shift solution to a problem that requires a backend structured in this format.
   // More ideally, the backend data structure would already be in the correct format for react calendar.
+  // Im also aware that I should use useState to update the values for the objects below
 
   // functions that take state and return them in object formats
   // thats react calender can render
