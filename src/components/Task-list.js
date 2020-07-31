@@ -9,7 +9,7 @@ export default function TaskList({ tasks, currDriver }) {
     return tasks.map((task, index) => {
       if (currDriver === "") {
         return <TaskCard key={task._id} task={task} />;
-      } else if (currDriver === tasks) {
+      } else if (currDriver === index) {
         return <TaskCard key={task._id} task={task} />;
       }
     });
