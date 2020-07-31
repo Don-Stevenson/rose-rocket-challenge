@@ -37,9 +37,11 @@ Hindsight being 20/20, I realize that I bit off more than I could chew in terms 
 - react calender seems extra finicky with scolling and resizing, would have liked to have solved that
 
 ### Rose Rocket Front End Looks like:
--[Main Page - after adding 4 Driver Tasks](https://github.com/Don-Stevenson/rose-rocket-challenge/blob/master/public/docs/Main%20Page.png)
--[Individual Driver Calendar Time Line and Task](https://github.com/Don-Stevenson/rose-rocket-challenge/blob/master/public/docs/Individual%20Driver%20Task.png)
--[Add New Driver Task](https://github.com/Don-Stevenson/rose-rocket-challenge/blob/master/public/docs/Add%20Driver%20Task.png)
+*[Main Page - after adding 4 Driver Tasks](https://github.com/Don-Stevenson/rose-rocket-challenge/blob/master/public/docs/Main%20Page.png)
+
+*[Individual Driver Calendar Time Line and Task](https://github.com/Don-Stevenson/rose-rocket-challenge/blob/master/public/docs/Individual%20Driver%20Task.png)
+
+*[Add New Driver Task](https://github.com/Don-Stevenson/rose-rocket-challenge/blob/master/public/docs/Add%20Driver%20Task.png)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
