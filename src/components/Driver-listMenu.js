@@ -15,13 +15,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const SimpleSelectDrivers = ({tasks}) => {
+const SimpleSelectDrivers = ({tasks, setCurrDriver}) => {
   const classes = useStyles();
   const [driver, setDriver] = useState("");
 
 
 const handleChange = (event) => {
     setDriver(event.target.value);
+    setCurrDriver(event.target.value)
   };
    
 

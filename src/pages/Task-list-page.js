@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import TaskList from "../components/Task-list";
 import { TaskContext } from "../context/Task-context";
 import axios from "axios";
@@ -14,6 +14,7 @@ import CsvDownload from "react-json-to-csv";
 export default function TasksListPage() {
   // state handling using useContext
   const [state, dispatch] = useContext(TaskContext);
+  const [currDriver, setCurrDriver] = useState("");
 
   // using useEffect to get task info and dispatch that json data
   useEffect(() => {
@@ -96,13 +97,19 @@ export default function TasksListPage() {
     return calenderArr;
   };
 
-
   const makeCalendarGroups = items => {
-    let groupArr = items.reduce((accum, element) => {
-      accum.push({
-        id: parseInt(element.taskId),
-        title: `${element.taskType} (${element.driverFirstName} ${element.driverLastName})`
-      });
+    let groupArr = items.reduce((accum, element, index) => {
+      if (currDriver === "") {
+        accum.push({
+          id: parseInt(element.taskId),
+          title: `${element.taskType} (${element.driverFirstName} ${element.driverLastName})`
+        });
+      } else if (currDriver === index) {
+        accum.push({
+          id: parseInt(element.taskId),
+          title: `${element.taskType} (${element.driverFirstName} ${element.driverLastName})`
+        });
+      }
       return accum;
     }, []);
     return groupArr;
@@ -111,12 +118,15 @@ export default function TasksListPage() {
   // call the functions and return them into new arrays of objects
   const calendarItems = makeCalendarItems(state.tasks);
   const calendarGroups = makeCalendarGroups(state.tasks);
-  
+
   return (
     <div>
       <div className="driver_schedule">
         <h2> Driver Schedule </h2>
-        <SimpleSelect tasks={state.tasks}></SimpleSelect>
+        <SimpleSelect
+          tasks={state.tasks}
+          setCurrDriver={setCurrDriver}
+        ></SimpleSelect>
 
         <Timeline
           groups={calendarGroups}
@@ -124,7 +134,10 @@ export default function TasksListPage() {
           defaultTimeStart={moment().add(-12, "hour")}
           defaultTimeEnd={moment().add(12, "hour")}
         />
-        <h4> Schedule can be moved dragged left to right, with zoom in and out</h4>
+        <h4>
+          {" "}
+          Schedule can be moved dragged left to right, with zoom in and out
+        </h4>
         <p> shift + mousewheel = move timeline left/right </p>
         <p> alt + mousewheel = zoom in/out</p>
         <p> ctrl + mousewheel = zoom in/out 10× faster</p>
@@ -136,7 +149,7 @@ export default function TasksListPage() {
       }
       {state.message.content && <FlashMessage message={state.message} />}
       <p> </p>
-      <TaskList tasks={state.tasks} />
+      <TaskList tasks={state.tasks} currDriver={currDriver} />
 
       <div className="CSVfile">
         <p> Complete Driver Schedule in CSV format</p>
