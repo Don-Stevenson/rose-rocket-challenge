@@ -85,7 +85,7 @@ export default function TaskForm({ task }) {
           <Form.Group widths="equal">
             <Form.Field className={classnames({ error: errors.taskId })}>
               <label htmlFor="taskId">
-                Task Id (Unique 4 digits)
+                Task Id (4 Unique digits)
                 <input
                   id="taskId"
                   name="taskId"
@@ -108,7 +108,7 @@ export default function TaskForm({ task }) {
 
             <Form.Field className={classnames({ error: errors.date })}>
               <label htmlFor="date">
-                Date(mm-dd-yyyy)
+                Date (mm-dd-yyyy)
                 <input
                   id="date"
                   name="date"

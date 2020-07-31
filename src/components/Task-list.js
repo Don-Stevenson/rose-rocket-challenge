@@ -4,11 +4,12 @@ import TaskCard from "./Task-card";
 
 export default function TaskList({ tasks, currDriver }) {
   // using map to display a list of tasks and task information
+  
   const cards = () => {
     return tasks.map((task, index) => {
       if (currDriver === "") {
         return <TaskCard key={task._id} task={task} />;
-      } else if (currDriver === index) {
+      } else if (currDriver === tasks) {
         return <TaskCard key={task._id} task={task} />;
       }
     });

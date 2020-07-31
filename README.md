@@ -22,8 +22,9 @@ Hindsight being 20/20, I realize that I bit off more than I could chew in terms 
 
 ### If I had more time (in no particular order) ...
 
-- Calendar Timeline doesn't auto update upon delete a task.  It requires a refresh of the browser.  This is certainly fixable within react.
+- Calendar Timeline doesn't auto update upon delete a task.  It requires a refresh of the browser. This is certainly fixable within react.
 - Impliment the logic in the createDriverCSV helper to render the CSV file for the selected driver
+- Impliment logic to display drivers tasks and calendar timeline by last name instead of by task 
 - Spend more time on the styling and design, especially for mobile
 - Make / Import more helper functions to clean up the code further
 - Add maps to the destinations for dispatchers or drivers
