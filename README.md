@@ -1,42 +1,42 @@
 # Rose Rocket Challenge Front End
-The challenge I set out was to build a working dispatch site to create, update and delete driver tasks.  I needed to be able to make a drop down to display only a current drivers tasks. I needed to create a CSV file based up the driver and for intervals of time (2, 4 days, 1 week and 28 days)
+The challenge I set out was to build a working dispatch site to create, update and delete driver tasks.  I needed to be able to make a drop-down to display only current drivers' tasks. I needed to create a CSV file based up the driver and for intervals of time (2, 4 days, 1 week and 28 days)
 
 I used react-calendar-time-line to render a driver's schedule and used semantic-ui cards to handle displaying / CRUD of task details. 
 
-I really enjoyed working on this project; I learned a ton and was able to accomplish a lot more than I thought I could!
+I enjoyed working on this project; I learned a ton and was able to accomplish a lot more than I thought I could!
 
-Hindsight being 20/20, I realize that I bit off more than I could chew in terms of handling real dates / calendars and the complications that arrise from that. That said, I am stand behind my decision to try something more difficult because I learned more that way.
+Hindsight being 20/20, I realize that I bit off more than I could chew in handling real dates/calendars and the complications that arise from that. That said, I stand behind my decision to try something more difficult because I learned more that way.
 
 
-### Things I am really proud of!
+### Things I am proud of!
 - I learned to use a ton of new libraries! e.g. react-calendar-timeline, moment, date-fns, react-json-to-csv, semantic-ui, etc.
 - Using a reducer to handle the state (it's been a while)
-- I chose to handle real dates and display them in a calendar timeline. This was tough, and I am really pleased that I was able to work and use actual dates.
+- I chose to handle real dates and display them in a calendar timeline. This was tough, and I am pleased that I was able to work and use actual dates.
 - Getting a server up and running that persists data!
 - Tackling a full stack project for the first time by myself with minimal input from others
 - Getting some styling done.
 - Making some decent docs that explain how to install and run this project
-- Getting a friend to install the project sucessfully by only using the docs I worked on.
-- Getting a sense of accomplishment and joy for what I was able to complete in a week!!!
+- Getting a friend to install the project successfully by only using the docs I worked on.
+- Getting a sense of accomplishment and joy for what I completed in a week!!!
 
 
 ### If I had more time (in no particular order) ...
 
-- Calendar Timeline doesn't auto update upon delete a task.  It requires a refresh of the browser. This is certainly fixable within react.
-- Impliment the logic in the createDriverCSV helper to render the CSV file for the selected driver
-- Impliment logic to display drivers tasks and calendar timeline by last name instead of by task 
+- Calendar Timeline doesn't auto-update upon deleting a task.  It requires a refresh of the browser. This is certainly fixable within React.
+- Implement the logic in the createDriverCSV helper to render the CSV file for the selected driver
+- Implement logic to display drivers' tasks and calendar timeline by last name instead of by task 
 - Spend more time on the styling and design, especially for mobile
 - Make / Import more helper functions to clean up the code further
 - Add maps to the destinations for dispatchers or drivers
-- Take in drivers phone numbers and send out taks addresses and maps via twillio or other sms service
-- Handled click and drag tasks in the calendar that auto updates the task times
-- I could have refectored my code more.
+- Take in drivers' phone numbers and send out task addresses and maps via Twillio or other SMS service
+- Handled click and drag tasks in the calendar that auto-updates the task times
+- I could have refactored my code more.
 
 ### Bugs
-- Bowser may require a resize before the react calendar timeline renders the individual tasks - works fine on Mac's, not so well on linux systems
-- react calender seems extra finicky with scolling and resizing, would have liked to have solved that
+- Bowser may require a resize before the react calendar timeline renders the individual tasks - works fine on Macs, not so well on Linux systems
+- The React calendar seems extra finicky with scrolling and resizing, I would have liked to have solved that
 
-### Rose Rocket Front End Looks like:
+### Rose Rocket Front End Looks like this:
 * Main Page - after adding 4 Driver Tasks
 ![Main Page - after adding 4 Driver Tasks](https://github.com/Don-Stevenson/rose-rocket-challenge/blob/master/public/docs/Main%20Page.png)
 
